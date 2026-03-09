@@ -1,0 +1,14 @@
+# Notas, especificaciones e historial de LLMs
+*.md
+!README.md
+*.txt
+.notas/
+.history/
+.cursor/
+.vscode/
+.idea/
+
+# SO y archivos temporales
+.DS_Store
+Thumbs.db
+*.log
