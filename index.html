@@ -1,0 +1,3663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Web - Amós Abelleira</title>
+  <meta name="description" content="CV web de Amós Abelleira, desarrollador full stack con formación técnica, prácticas en software y capacidad de aprendizaje continuo.">
+  <meta name="author" content="Amós Abelleira">
+  <meta name="theme-color" content="#0d1117">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CV Web - Amós Abelleira">
+  <meta property="og:description" content="Desarrollador full stack con base técnica en Java, JavaScript, Angular, React y bases de datos.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="CV Web - Amós Abelleira">
+  <meta property="twitter:description" content="Perfil técnico, experiencia, formación y contacto de Amós Abelleira.">
+  <link rel="canonical" href="https://estudiagit.github.io/cv-web/">
+  
+  <!-- Google Fonts: JetBrains Mono y Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIABLES (Modo oscuro por defecto) */
+    :root {
+      --bg:            #0d1117;
+      --surface:       #161b22;
+      --surface-2:     #21262d;
+      --border:        #30363d;
+      --text:          #e6edf3;
+      --text-muted:    #8b949e;
+      --accent:        #58a6ff;
+      --accent-green:  #3fb950;
+      --accent-purple: #bc8cff;
+      --accent-orange: #d29922;
+      --glass-bg:      rgba(17, 24, 35, 0.56);
+      --glass-bg-soft: rgba(13, 17, 23, 0.4);
+      --glass-border:  rgba(88, 166, 255, 0.24);
+      --glass-shadow:  0 14px 32px rgba(5, 8, 14, 0.34), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      --font-body: 'Inter', sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+    }
+
+    /* Modo claro */
+    body.light {
+      --bg:            #ffffff;
+      --surface:       #f6f8fa;
+      --surface-2:     #eaeef2;
+      --border:        #d0d7de;
+      --text:          #1f2328;
+      --text-muted:    #656d76;
+      --accent:        #0969da;
+      --accent-green:  #1a7f37;
+      --accent-purple: #8250df;
+      --accent-orange: #9a6700;
+      --glass-bg:      rgba(255, 255, 255, 0.74);
+      --glass-bg-soft: rgba(255, 255, 255, 0.64);
+      --glass-border:  rgba(9, 105, 218, 0.24);
+      --glass-shadow:  0 14px 28px rgba(9, 30, 66, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    }
+
+    /* BASE */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(120% 90% at 14% 22%, rgba(88, 166, 255, 0.26), rgba(88, 166, 255, 0) 58%),
+        radial-gradient(120% 90% at 86% 74%, rgba(63, 185, 80, 0.24), rgba(63, 185, 80, 0) 60%),
+        linear-gradient(90deg, rgba(88, 166, 255, 0.12), rgba(63, 185, 80, 0.09));
+      opacity: 0.92;
+    }
+
+    body.light::before {
+      background:
+        radial-gradient(120% 90% at 14% 22%, rgba(9, 105, 218, 0.14), rgba(9, 105, 218, 0) 58%),
+        radial-gradient(120% 90% at 86% 74%, rgba(26, 127, 55, 0.12), rgba(26, 127, 55, 0) 60%),
+        linear-gradient(90deg, rgba(9, 105, 218, 0.07), rgba(26, 127, 55, 0.06));
+      opacity: 0.78;
+    }
+
+    .ascii-sphere-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.44;
+      filter: saturate(1.08) contrast(1.04);
+      transition: opacity 0.45s ease, filter 0.45s ease;
+      will-change: opacity, filter;
+    }
+
+    body.light .ascii-sphere-bg {
+      opacity: 0.32;
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    body[data-fx-section="sobre-mi"] .ascii-sphere-bg {
+      opacity: 0.54;
+      filter: saturate(1.2) contrast(1.14) drop-shadow(0 0 16px rgba(88, 166, 255, 0.18));
+    }
+
+    body[data-fx-section="habilidades"] .ascii-sphere-bg {
+      opacity: 0.57;
+      filter: saturate(1.23) contrast(1.16) drop-shadow(0 0 18px rgba(188, 140, 255, 0.2));
+    }
+
+    body[data-fx-section="proyectos"] .ascii-sphere-bg {
+      opacity: 0.6;
+      filter: saturate(1.26) contrast(1.18) drop-shadow(0 0 20px rgba(88, 166, 255, 0.24));
+    }
+
+    body[data-fx-section="formacion"] .ascii-sphere-bg {
+      opacity: 0.53;
+      filter: saturate(1.18) contrast(1.13) drop-shadow(0 0 16px rgba(63, 185, 80, 0.17));
+    }
+
+    body[data-fx-section="contacto"] .ascii-sphere-bg {
+      opacity: 0.64;
+      filter: saturate(1.3) contrast(1.2) drop-shadow(0 0 22px rgba(88, 166, 255, 0.26));
+    }
+
+    body.light[data-fx-section="sobre-mi"] .ascii-sphere-bg {
+      opacity: 0.38;
+      filter: saturate(1.09) contrast(1.08) drop-shadow(0 0 11px rgba(9, 105, 218, 0.1));
+    }
+
+    body.light[data-fx-section="habilidades"] .ascii-sphere-bg {
+      opacity: 0.4;
+      filter: saturate(1.11) contrast(1.08) drop-shadow(0 0 12px rgba(130, 80, 223, 0.11));
+    }
+
+    body.light[data-fx-section="proyectos"] .ascii-sphere-bg {
+      opacity: 0.42;
+      filter: saturate(1.13) contrast(1.09) drop-shadow(0 0 13px rgba(9, 105, 218, 0.13));
+    }
+
+    body.light[data-fx-section="formacion"] .ascii-sphere-bg {
+      opacity: 0.37;
+      filter: saturate(1.08) contrast(1.06) drop-shadow(0 0 11px rgba(26, 127, 55, 0.1));
+    }
+
+    body.light[data-fx-section="contacto"] .ascii-sphere-bg {
+      opacity: 0.48;
+      filter: saturate(1.14) contrast(1.1) drop-shadow(0 0 15px rgba(9, 105, 218, 0.18));
+    }
+
+    body[data-fx-section] .ascii-sphere-bg {
+      opacity: 0.62;
+      filter: saturate(1.28) contrast(1.2) drop-shadow(0 0 20px rgba(88, 166, 255, 0.24));
+    }
+
+    body.light[data-fx-section] .ascii-sphere-bg {
+      opacity: 0.46;
+      filter: saturate(1.12) contrast(1.1) drop-shadow(0 0 15px rgba(9, 105, 218, 0.18));
+    }
+
+    header, main, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1, h2, h3, h4, h5, h6, pre, code {
+      font-family: var(--font-code);
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    *:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* UTILITIES */
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -100px;
+      background-color: var(--accent);
+      color: var(--bg);
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-family: var(--font-code);
+      z-index: 2000;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 7vw, 1.9rem);
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      text-shadow: 0 0 14px rgba(88, 166, 255, 0.2);
+    }
+
+    section {
+      padding: clamp(3.6rem, 8.2vw, 5.5rem) 0;
+      scroll-margin-top: 86px; /* Evita que el header fijo tape el contenido */
+      position: relative;
+      isolation: isolate;
+      --section-fade-rgb: 88, 166, 255;
+      --section-merge: 44px;
+      --section-merge-height: 112px;
+      --section-merge-blur: 18px;
+    }
+
+    section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #sobre-mi { --section-fade-rgb: 88, 166, 255; }
+    #habilidades { --section-fade-rgb: 188, 140, 255; }
+    #proyectos { --section-fade-rgb: 88, 166, 255; }
+    #formacion { --section-fade-rgb: 63, 185, 80; }
+    #contacto { --section-fade-rgb: 88, 166, 255; }
+
+    main section + section {
+      margin-top: calc(var(--section-merge) * -1 - 1px);
+    }
+
+    main section:not(:last-of-type)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(var(--section-merge) * -1);
+      height: var(--section-merge-height);
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(var(--section-fade-rgb), 0) 0%,
+          rgba(var(--section-fade-rgb), 0.11) 34%,
+          rgba(var(--section-fade-rgb), 0.19) 52%,
+          rgba(var(--section-fade-rgb), 0.08) 72%,
+          rgba(var(--section-fade-rgb), 0) 100%
+        );
+      filter: blur(var(--section-merge-blur));
+      opacity: 0.84;
+    }
+
+    main section + section > .container::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(var(--section-merge) * -1);
+      height: var(--section-merge-height);
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(var(--section-fade-rgb), 0.16) 0%,
+          rgba(var(--section-fade-rgb), 0.08) 36%,
+          rgba(var(--section-fade-rgb), 0) 100%
+        );
+      filter: blur(calc(var(--section-merge-blur) - 3px));
+      opacity: 0.76;
+    }
+
+    body.light main section:not(:last-of-type)::after {
+      opacity: 0.66;
+      filter: blur(calc(var(--section-merge-blur) - 2px));
+    }
+
+    body.light main section + section > .container::before {
+      opacity: 0.58;
+      filter: blur(calc(var(--section-merge-blur) - 4px));
+    }
+
+    #sobre-mi::before,
+    #habilidades::before,
+    #proyectos::before,
+    #formacion::before {
+      content: "";
+      position: absolute;
+      inset: clamp(0.8rem, 2.3vw, 1.5rem) 0 clamp(1rem, 2.6vw, 1.8rem);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.78;
+      animation: sectionAuraFloat 8.4s ease-in-out infinite alternate;
+    }
+
+    #sobre-mi::before {
+      background:
+        radial-gradient(circle at 20% 26%, rgba(88, 166, 255, 0.2), rgba(88, 166, 255, 0) 42%),
+        radial-gradient(circle at 78% 72%, rgba(63, 185, 80, 0.14), rgba(63, 185, 80, 0) 40%),
+        linear-gradient(180deg, rgba(88, 166, 255, 0.06), transparent 70%);
+    }
+
+    #habilidades::before {
+      background:
+        radial-gradient(circle at 14% 32%, rgba(188, 140, 255, 0.2), rgba(188, 140, 255, 0) 42%),
+        radial-gradient(circle at 84% 66%, rgba(88, 166, 255, 0.14), rgba(88, 166, 255, 0) 42%),
+        linear-gradient(180deg, rgba(188, 140, 255, 0.06), transparent 70%);
+    }
+
+    #proyectos::before {
+      background:
+        radial-gradient(circle at 22% 24%, rgba(88, 166, 255, 0.2), rgba(88, 166, 255, 0) 44%),
+        radial-gradient(circle at 76% 76%, rgba(210, 153, 34, 0.14), rgba(210, 153, 34, 0) 44%),
+        linear-gradient(180deg, rgba(88, 166, 255, 0.08), transparent 74%);
+    }
+
+    #formacion::before {
+      background:
+        radial-gradient(circle at 18% 28%, rgba(63, 185, 80, 0.18), rgba(63, 185, 80, 0) 42%),
+        radial-gradient(circle at 82% 70%, rgba(88, 166, 255, 0.14), rgba(88, 166, 255, 0) 42%),
+        linear-gradient(180deg, rgba(63, 185, 80, 0.06), transparent 72%);
+    }
+
+    body.light #sobre-mi::before,
+    body.light #habilidades::before,
+    body.light #proyectos::before,
+    body.light #formacion::before {
+      opacity: 0.62;
+    }
+
+    body.light #sobre-mi::before {
+      background:
+        radial-gradient(circle at 20% 26%, rgba(9, 105, 218, 0.12), rgba(9, 105, 218, 0) 44%),
+        radial-gradient(circle at 78% 72%, rgba(26, 127, 55, 0.1), rgba(26, 127, 55, 0) 42%),
+        linear-gradient(180deg, rgba(9, 105, 218, 0.05), transparent 72%);
+    }
+
+    body.light #habilidades::before {
+      background:
+        radial-gradient(circle at 14% 32%, rgba(130, 80, 223, 0.12), rgba(130, 80, 223, 0) 44%),
+        radial-gradient(circle at 84% 66%, rgba(9, 105, 218, 0.1), rgba(9, 105, 218, 0) 44%),
+        linear-gradient(180deg, rgba(130, 80, 223, 0.05), transparent 72%);
+    }
+
+    body.light #proyectos::before {
+      background:
+        radial-gradient(circle at 22% 24%, rgba(9, 105, 218, 0.12), rgba(9, 105, 218, 0) 45%),
+        radial-gradient(circle at 76% 76%, rgba(154, 103, 0, 0.1), rgba(154, 103, 0, 0) 45%),
+        linear-gradient(180deg, rgba(9, 105, 218, 0.06), transparent 74%);
+    }
+
+    body.light #formacion::before {
+      background:
+        radial-gradient(circle at 18% 28%, rgba(26, 127, 55, 0.11), rgba(26, 127, 55, 0) 44%),
+        radial-gradient(circle at 82% 70%, rgba(9, 105, 218, 0.1), rgba(9, 105, 218, 0) 44%),
+        linear-gradient(180deg, rgba(26, 127, 55, 0.05), transparent 74%);
+    }
+
+    /* Fondo global unificado: desactivar costuras y halos por seccion */
+    main section + section {
+      margin-top: 0;
+    }
+
+    main section::after,
+    main section > .container::before,
+    #sobre-mi::before,
+    #habilidades::before,
+    #proyectos::before,
+    #formacion::before,
+    #contacto::before {
+      display: none;
+    }
+
+    body.js-enhanced section {
+      opacity: 0; /* Reveal progresivo solo si hay JS */
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    body.js-enhanced section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-code);
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text);
+    }
+
+    /* 1. NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background-color 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+    }
+
+    header.scrolled {
+      background-color: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    body.light header.scrolled {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-family: var(--font-code);
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.26rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-shadow: 0 0 14px rgba(88, 166, 255, 0.16);
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: var(--surface);
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(-0.5rem);
+      pointer-events: none;
+      transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.25s ease;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-links.active {
+      opacity: 1;
+      max-height: 320px;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 0.8rem;
+      font-family: var(--font-code);
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--text);
+      padding: 0.5rem;
+    }
+
+    .nav-actions .btn {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 0.85rem;
+      font-family: var(--font-code);
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    /* 2. HERO */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding-top: 70px; /* Offset navbar */
+      padding-bottom: 0;
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(1.7rem, 9vw, 2.2rem);
+      margin-bottom: 0.5rem;
+      white-space: normal;
+    }
+
+    .typewriter-container {
+      font-family: var(--font-code);
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      min-height: 1.8rem;
+    }
+
+    .typewriter-text {
+      color: var(--accent-green);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2rem;
+      background-color: var(--accent-green);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes contactGlowShift {
+      0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.78;
+      }
+      100% {
+        transform: translate3d(0, -8px, 0) scale(1.03);
+        opacity: 1;
+      }
+    }
+
+    @keyframes sectionAuraFloat {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, -7px, 0);
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-intro {
+      margin: 0 0 1.35rem;
+      max-width: min(100%, 64ch);
+      color: var(--text-muted);
+    }
+
+    .hero-code {
+      display: none;
+    }
+
+    .hero-code pre {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+
+    .code-keyword { color: var(--accent-purple); }
+    .code-class { color: var(--accent-orange); }
+    .code-method { color: var(--accent); }
+    .code-string { color: var(--accent-green); }
+    .code-annotation { color: var(--accent-orange); }
+
+    /* 3. SOBRE MÍ */
+    .about-text {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+      max-width: 76ch;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(88, 166, 255, 0.12), transparent 62%),
+        var(--glass-bg-soft);
+      backdrop-filter: blur(5px) saturate(115%);
+      -webkit-backdrop-filter: blur(5px) saturate(115%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background-color: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(7px) saturate(125%);
+      -webkit-backdrop-filter: blur(7px) saturate(125%);
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(88, 166, 255, 0.46);
+      box-shadow: 0 18px 34px rgba(5, 8, 14, 0.42), inset 0 0 0 1px rgba(88, 166, 255, 0.2);
+    }
+
+    body.light .about-text {
+      background:
+        linear-gradient(145deg, rgba(9, 105, 218, 0.08), transparent 64%),
+        var(--glass-bg-soft);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+    }
+
+    body.light .stat-card:hover {
+      border-color: rgba(9, 105, 218, 0.44);
+      box-shadow: 0 16px 30px rgba(9, 30, 66, 0.16), inset 0 0 0 1px rgba(9, 105, 218, 0.14);
+    }
+
+    .stat-number {
+      font-family: var(--font-code);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* 4. HABILIDADES */
+    .skills-category {
+      margin-bottom: 2rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      background:
+        linear-gradient(140deg, rgba(188, 140, 255, 0.12), transparent 62%),
+        var(--glass-bg-soft);
+      backdrop-filter: blur(6px) saturate(120%);
+      -webkit-backdrop-filter: blur(6px) saturate(120%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      transition: border-color 0.22s ease, transform 0.22s ease;
+    }
+
+    .skills-category:hover {
+      border-color: rgba(188, 140, 255, 0.46);
+      transform: translateY(-1px);
+    }
+
+    .skills-category h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .chip {
+      background-color: rgba(13, 17, 23, 0.38);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-family: var(--font-code);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+    }
+
+    .chip.lang {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: rgba(88, 166, 255, 0.14);
+    }
+
+    .chip.env {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background-color: rgba(188, 140, 255, 0.14);
+    }
+
+    .chip.db {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      background-color: rgba(63, 185, 80, 0.14);
+    }
+
+    .chip.tools {
+      border-color: var(--accent-orange);
+      color: var(--accent-orange);
+      background-color: rgba(210, 153, 34, 0.14);
+    }
+
+    .chip.concept {
+      border-color: var(--text-muted);
+      color: var(--text-muted);
+      background-color: rgba(139, 148, 158, 0.14);
+    }
+
+    body.light .skills-category {
+      background:
+        linear-gradient(140deg, rgba(130, 80, 223, 0.08), transparent 64%),
+        var(--glass-bg-soft);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+    }
+
+    body.light .skills-category:hover {
+      border-color: rgba(130, 80, 223, 0.4);
+    }
+
+    body.light .chip {
+      background-color: rgba(255, 255, 255, 0.72);
+    }
+
+    body.light .chip.lang { background-color: rgba(9, 105, 218, 0.1); }
+    body.light .chip.env { background-color: rgba(130, 80, 223, 0.1); }
+    body.light .chip.db { background-color: rgba(26, 127, 55, 0.1); }
+    body.light .chip.tools { background-color: rgba(154, 103, 0, 0.1); }
+    body.light .chip.concept { background-color: rgba(101, 109, 118, 0.12); }
+
+    /* 5. PROYECTOS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .projects-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .projects-header .section-title {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .projects-intro {
+      margin: 0 0 1.45rem;
+      max-width: min(100%, 76ch);
+      color: var(--text-muted);
+    }
+
+    .project-speed-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 180px;
+    }
+
+    .project-speed-slider {
+      position: relative;
+      width: 150px;
+      height: 18px;
+      border-radius: 999px;
+      cursor: ew-resize;
+      touch-action: none;
+      background: transparent;
+    }
+
+    .project-speed-slider::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      top: -1.95rem;
+      transform: translateX(-50%) translateY(4px);
+      font-family: var(--font-code);
+      font-size: 0.72rem;
+      color: var(--text);
+      background-color: var(--glass-bg-soft);
+      border: 1px solid var(--glass-border);
+      border-radius: 6px;
+      padding: 0.28rem 0.45rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.16s ease, transform 0.16s ease;
+      z-index: 3;
+    }
+
+    .project-speed-slider:is(:hover, :focus-visible, :active)::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .project-speed-slider:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .project-speed-fill {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 2px;
+      width: 0%;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background-color: rgba(88, 166, 255, 0.85);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .project-speed-track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background-color: var(--border);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .project-speed-thumb {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid var(--accent);
+      background-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.22);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    body.light .project-speed-slider::after {
+      background-color: rgba(255, 255, 255, 0.86);
+    }
+
+    body.light .project-speed-fill {
+      background-color: rgba(9, 105, 218, 0.85);
+    }
+
+    body.light .project-speed-thumb {
+      box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.2);
+    }
+
+    .project-card {
+      background-color: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(7px) saturate(126%);
+      -webkit-backdrop-filter: blur(7px) saturate(126%);
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 40px rgba(5, 8, 14, 0.44), 0 0 0 1px rgba(88, 166, 255, 0.22) inset;
+      border-color: rgba(88, 166, 255, 0.54);
+      background-color: rgba(17, 24, 35, 0.64);
+    }
+
+    body.light .project-card:hover {
+      box-shadow: 0 18px 32px rgba(9, 30, 66, 0.17), 0 0 0 1px rgba(9, 105, 218, 0.14) inset;
+      border-color: rgba(9, 105, 218, 0.46);
+      background-color: rgba(255, 255, 255, 0.86);
+    }
+
+    .project-title {
+      font-family: var(--font-code);
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .project-status {
+      font-size: 0.8rem;
+      font-family: var(--font-code);
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-desc {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-stack {
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .project-actions a {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    /* 6. FORMACIÓN */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 7px;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(88, 166, 255, 0.45), rgba(88, 166, 255, 0.12));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding: 0.95rem 1rem 0.95rem 1.05rem;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      background:
+        linear-gradient(140deg, rgba(63, 185, 80, 0.08), transparent 64%),
+        var(--glass-bg-soft);
+      backdrop-filter: blur(6px) saturate(118%);
+      -webkit-backdrop-filter: blur(6px) saturate(118%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      transition: border-color 0.24s ease, transform 0.24s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(88, 166, 255, 0.42);
+      transform: translateY(-1px);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: -30px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--bg);
+      border: 3px solid var(--accent);
+    }
+
+    .timeline-year {
+      font-family: var(--font-code);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-place {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    body.light .timeline::before {
+      background: linear-gradient(180deg, rgba(9, 105, 218, 0.36), rgba(9, 105, 218, 0.1));
+    }
+
+    body.light .timeline-item {
+      background:
+        linear-gradient(140deg, rgba(26, 127, 55, 0.06), transparent 66%),
+        var(--glass-bg-soft);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+    }
+
+    /* 7. CONTACTO */
+    #contacto {
+      position: relative;
+      isolation: isolate;
+    }
+
+    #contacto::before {
+      content: "";
+      position: absolute;
+      inset: clamp(0.8rem, 2.4vw, 1.4rem) 0 clamp(1rem, 2.5vw, 1.8rem);
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 16% 24%, rgba(88, 166, 255, 0.24), rgba(88, 166, 255, 0) 44%),
+        radial-gradient(circle at 82% 72%, rgba(63, 185, 80, 0.18), rgba(63, 185, 80, 0) 42%),
+        linear-gradient(180deg, rgba(88, 166, 255, 0.08), transparent 68%);
+      opacity: 0.92;
+      animation: contactGlowShift 6.8s ease-in-out infinite alternate;
+    }
+
+    body.light #contacto::before {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(9, 105, 218, 0.14), rgba(9, 105, 218, 0) 45%),
+        radial-gradient(circle at 82% 70%, rgba(26, 127, 55, 0.12), rgba(26, 127, 55, 0) 42%),
+        linear-gradient(180deg, rgba(9, 105, 218, 0.06), transparent 70%);
+      opacity: 0.82;
+    }
+
+    #contacto .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-header .section-title {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-beat-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 180px;
+    }
+
+    .contact-beat-slider {
+      position: relative;
+      width: 150px;
+      height: 18px;
+      border-radius: 999px;
+      cursor: ew-resize;
+      touch-action: none;
+      background: transparent;
+    }
+
+    .contact-beat-slider::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      top: -1.95rem;
+      transform: translateX(-50%) translateY(4px);
+      font-family: var(--font-code);
+      font-size: 0.72rem;
+      color: var(--text);
+      background-color: var(--glass-bg-soft);
+      border: 1px solid var(--glass-border);
+      border-radius: 6px;
+      padding: 0.28rem 0.45rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.16s ease, transform 0.16s ease;
+      z-index: 3;
+    }
+
+    .contact-beat-slider:is(:hover, :focus-visible, :active)::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .contact-beat-slider:focus-visible {
+      outline: 2px solid var(--accent-green);
+      outline-offset: 2px;
+    }
+
+    .contact-beat-fill {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 2px;
+      width: 0%;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background-color: rgba(63, 185, 80, 0.9);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .contact-beat-track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      border-radius: 999px;
+      background-color: var(--border);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .contact-beat-thumb {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid var(--accent-green);
+      background-color: var(--accent-green);
+      box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.24);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    body.light .contact-beat-fill {
+      background-color: rgba(26, 127, 55, 0.85);
+    }
+
+    body.light .contact-beat-thumb {
+      box-shadow: 0 0 0 2px rgba(26, 127, 55, 0.2);
+    }
+
+    .contact-container {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .contact-intro {
+      color: var(--text-muted);
+      max-width: 72ch;
+      margin: 0;
+    }
+
+    .glass-marker-text {
+      position: relative;
+      display: inline-block;
+      max-width: min(100%, 76ch);
+      line-height: 1.58;
+      padding: 0.22rem 0.5rem 0.24rem;
+      border-radius: 10px;
+      isolation: isolate;
+    }
+
+    .contact-intro.glass-marker-text {
+      max-width: min(100%, 72ch);
+    }
+
+    .contact-note.glass-marker-text {
+      max-width: min(100%, 78ch);
+    }
+
+    .glass-marker-text::before,
+    .glass-marker-text::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glass-marker-text::before {
+      inset: 0.12rem -0.46rem 0.08rem -0.42rem;
+      border-radius: 14px 11px 13px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background:
+        linear-gradient(
+          98deg,
+          rgba(255, 255, 255, 0.08) 0%,
+          rgba(255, 255, 255, 0.05) 28%,
+          rgba(88, 166, 255, 0.12) 54%,
+          rgba(63, 185, 80, 0.1) 74%,
+          rgba(255, 255, 255, 0.04) 100%
+        );
+      clip-path: polygon(
+        0% 16%, 5% 8%, 13% 11%, 24% 5%, 38% 11%, 51% 6%, 63% 12%, 76% 8%, 88% 11%, 100% 15%,
+        99% 82%, 93% 92%, 84% 89%, 72% 95%, 58% 90%, 45% 95%, 31% 89%, 20% 94%, 10% 89%, 1% 82%
+      );
+      backdrop-filter: blur(10px) saturate(140%);
+      -webkit-backdrop-filter: blur(10px) saturate(140%);
+      box-shadow: 0 9px 20px rgba(6, 10, 18, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+      transform: rotate(-1.2deg);
+    }
+
+    .glass-marker-text::after {
+      inset: 0.34rem -0.2rem 0.14rem -0.28rem;
+      border-radius: 14px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(88, 166, 255, 0.08) 44%,
+          rgba(63, 185, 80, 0.08) 78%,
+          rgba(255, 255, 255, 0.06) 100%
+        );
+      filter: blur(9px);
+      opacity: 0.74;
+      transform: rotate(-2deg);
+    }
+
+    .glass-marker-soft::before {
+      border-color: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(7px) saturate(120%);
+      -webkit-backdrop-filter: blur(7px) saturate(120%);
+      box-shadow: 0 6px 14px rgba(6, 10, 18, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      opacity: 0.6;
+      transform: rotate(-0.95deg);
+    }
+
+    .glass-marker-soft::after {
+      filter: blur(7px);
+      opacity: 0.44;
+      transform: rotate(-1.5deg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .contact-card {
+      background-color: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      min-height: 176px;
+      backdrop-filter: blur(7px) saturate(128%);
+      -webkit-backdrop-filter: blur(7px) saturate(128%);
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+    }
+
+    .contact-card:hover,
+    .contact-card:focus-within {
+      transform: translateY(-2px);
+      border-color: rgba(88, 166, 255, 0.48);
+      box-shadow: 0 20px 38px rgba(5, 8, 14, 0.42), 0 0 0 1px rgba(88, 166, 255, 0.2) inset;
+      background-color: rgba(17, 24, 35, 0.64);
+    }
+
+    body.light .contact-card {
+      background-color: var(--glass-bg);
+      border-color: var(--glass-border);
+      box-shadow: var(--glass-shadow);
+    }
+
+    body.light .contact-card:hover,
+    body.light .contact-card:focus-within {
+      border-color: rgba(9, 105, 218, 0.44);
+      background-color: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 16px 30px rgba(9, 30, 66, 0.16), 0 0 0 1px rgba(9, 105, 218, 0.14) inset;
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-code);
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      margin: 0;
+    }
+
+    .contact-value {
+      font-family: var(--font-code);
+      color: var(--text);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-action {
+      width: fit-content;
+      margin-top: auto;
+    }
+
+    .contact-disclaimer {
+      font-size: 0.85rem;
+    }
+
+    .availability-box {
+      border: 1px solid var(--glass-border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      background:
+        linear-gradient(135deg, rgba(88, 166, 255, 0.22), rgba(88, 166, 255, 0.05) 58%, rgba(63, 185, 80, 0.04)),
+        rgba(13, 17, 23, 0.38);
+      backdrop-filter: blur(4px) saturate(120%);
+      -webkit-backdrop-filter: blur(4px) saturate(120%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    body.light .availability-box {
+      background:
+        linear-gradient(135deg, rgba(9, 105, 218, 0.14), rgba(9, 105, 218, 0.04) 62%, rgba(26, 127, 55, 0.04)),
+        rgba(255, 255, 255, 0.72);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+    }
+
+    .availability-title {
+      font-family: var(--font-code);
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.65rem;
+    }
+
+    .availability-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .availability-list li::marker {
+      color: var(--accent);
+    }
+
+    .contact-note {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    body.light .glass-marker-text::before {
+      border-color: rgba(9, 105, 218, 0.12);
+      background:
+        linear-gradient(
+          98deg,
+          rgba(255, 255, 255, 0.66) 0%,
+          rgba(255, 255, 255, 0.58) 34%,
+          rgba(9, 105, 218, 0.09) 58%,
+          rgba(26, 127, 55, 0.08) 78%,
+          rgba(255, 255, 255, 0.58) 100%
+        );
+      box-shadow: 0 8px 18px rgba(9, 30, 66, 0.09), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    body.light .glass-marker-text::after {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.22) 0%,
+          rgba(9, 105, 218, 0.07) 46%,
+          rgba(26, 127, 55, 0.07) 80%,
+          rgba(255, 255, 255, 0.2) 100%
+        );
+      opacity: 0.62;
+    }
+
+    body.light .glass-marker-soft::before {
+      border-color: rgba(9, 105, 218, 0.09);
+      box-shadow: 0 6px 14px rgba(9, 30, 66, 0.07), inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+      opacity: 0.58;
+    }
+
+    body.light .glass-marker-soft::after {
+      opacity: 0.42;
+    }
+
+    /* 8. FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        gap: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+        white-space: nowrap;
+      }
+
+      .hero-code {
+        display: block;
+      }
+
+      .hero-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-intro {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      header {
+        transition: background-color 0.28s ease, box-shadow 0.28s ease, backdrop-filter 0.28s ease, border-color 0.28s ease;
+      }
+
+      header.scrolled {
+        background:
+          linear-gradient(180deg, rgba(88, 166, 255, 0.08), rgba(88, 166, 255, 0.02) 58%, rgba(63, 185, 80, 0.03)),
+          var(--glass-bg-soft);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 12px 28px rgba(5, 8, 14, 0.24);
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      body.light header.scrolled {
+        background:
+          linear-gradient(180deg, rgba(9, 105, 218, 0.05), rgba(9, 105, 218, 0.01) 58%, rgba(26, 127, 55, 0.02)),
+          var(--glass-bg);
+        border-bottom-color: rgba(9, 105, 218, 0.14);
+      }
+
+      .nav-container {
+        max-width: 1180px;
+        padding: 0 clamp(1.25rem, 2vw, 1.75rem);
+        height: 74px;
+        gap: 1.5rem;
+      }
+
+      .nav-container > nav {
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .logo {
+        font-size: 1.26rem;
+        letter-spacing: -0.04em;
+        text-shadow: 0 0 14px rgba(88, 166, 255, 0.16);
+      }
+
+      .nav-links {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        border: none;
+        opacity: 1;
+        max-height: none;
+        transform: none;
+        pointer-events: auto;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(1rem, 1.65vw, 1.55rem);
+        flex-wrap: nowrap;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
+        position: relative;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: var(--text-muted);
+        opacity: 0.96;
+        padding: 0.2rem 0;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.48rem;
+        height: 1px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.92), transparent);
+        opacity: 0;
+        transform: scaleX(0.66);
+        transition: opacity 0.2s ease, transform 0.22s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible,
+      .nav-links a[aria-current="page"] {
+        color: var(--text);
+        opacity: 1;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after,
+      .nav-links a[aria-current="page"]::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .nav-actions {
+        gap: 0.65rem;
+      }
+
+      .theme-toggle {
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        opacity: 0.96;
+        padding: 0.34rem 0.55rem;
+        border: 1px solid rgba(88, 166, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(13, 17, 23, 0.18);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .theme-toggle:hover,
+      .theme-toggle:focus-visible {
+        color: var(--text);
+        border-color: rgba(88, 166, 255, 0.3);
+        background: rgba(88, 166, 255, 0.08);
+        opacity: 1;
+      }
+
+      body.light .theme-toggle {
+        background: rgba(255, 255, 255, 0.44);
+        border-color: rgba(9, 105, 218, 0.14);
+      }
+
+      body.light .theme-toggle:hover,
+      body.light .theme-toggle:focus-visible {
+        background: rgba(9, 105, 218, 0.08);
+        border-color: rgba(9, 105, 218, 0.24);
+      }
+
+      .nav-actions .btn {
+        display: inline-block;
+        padding: 0.7rem 1.15rem;
+        font-size: 0.83rem;
+        line-height: 1;
+        border-radius: 8px;
+        white-space: nowrap;
+        border-width: 1px;
+        background: linear-gradient(135deg, rgba(88, 166, 255, 0.98), rgba(88, 166, 255, 0.82));
+        border-color: rgba(88, 166, 255, 0.48);
+        box-shadow: 0 10px 22px rgba(88, 166, 255, 0.16);
+      }
+
+      .nav-actions .btn:hover,
+      .nav-actions .btn:focus-visible {
+        background: rgba(88, 166, 255, 0.08);
+        color: var(--accent);
+        border-color: rgba(88, 166, 255, 0.48);
+        box-shadow: 0 12px 24px rgba(88, 166, 255, 0.12);
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-header, .contact-header {
+        flex-wrap: nowrap;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    /* ESTILOS DE IMPRESIÓN */
+    @media print {
+      .ascii-sphere-bg, header, .hero-actions, .footer-links, .theme-toggle, .btn, .contact-beat-control {
+        display: none !important;
+      }
+      body::before {
+        display: none !important;
+      }
+      #sobre-mi::before,
+      #habilidades::before,
+      #proyectos::before,
+      #formacion::before,
+      #contacto::before,
+      main section::after {
+        display: none !important;
+      }
+      main section > .container::before {
+        display: none !important;
+      }
+      main section + section {
+        margin-top: 0 !important;
+      }
+      body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 11pt !important;
+      }
+      * {
+        box-shadow: none !important;
+        background: transparent !important;
+        color: black !important;
+        border-color: #ccc !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .project-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr !important;
+        display: block;
+      }
+      .project-card {
+        margin-bottom: 2rem;
+      }
+      section {
+        padding: 2rem 0 !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      section {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <canvas id="ascii-sphere-bg" class="ascii-sphere-bg" aria-hidden="true"></canvas>
+
+  <!-- 1. NAVBAR -->
+  <header id="header">
+    <div class="container nav-container">
+      <div class="logo">&lt;/&gt;</div>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Experiencia</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar modo claro/oscuro" aria-pressed="false">DARK</button>
+        <a href="assets/CV-Amos.pdf" class="btn btn-primary" download="CV-Amos-Abelleira.pdf">Descargar CV</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">[=]</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 2. HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 id="hero-title">Amós Abelleira Pérez</h1>
+          <div class="typewriter-container" aria-live="polite">
+            <span class="typewriter-text" id="typewriter"></span><span class="cursor"></span>
+          </div>
+          <p class="hero-intro glass-marker-text glass-marker-soft">
+            Combino una reconversión profesional real con base técnica en desarrollo web, comunicación sólida y capacidad para adaptarme rápido a equipos y productos.
+          </p>
+          <div class="hero-actions">
+            <a href="assets/CV-Amos.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar CV</a>
+            <a href="#contacto" class="btn btn-outline">Contactar</a>
+          </div>
+        </div>
+        <div class="hero-code" aria-hidden="true">
+<pre><code><span class="code-annotation">@RestController</span>
+<span class="code-keyword">public class</span> <span class="code-class">CandidateProfileController</span> {
+
+    <span class="code-annotation">@GetMapping</span>(<span class="code-string">"/profile"</span>)
+    <span class="code-keyword">public</span> ResponseEntity&lt;String&gt; <span class="code-method">summary</span>() {
+        <span class="code-keyword">return</span> ResponseEntity
+            .ok(<span class="code-string">"Contrátame · Full Stack"</span>);
+    }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SOBRE MÍ -->
+    <section id="sobre-mi" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">Sobre mí</h2>
+        <p class="about-text">
+          Soy Amós, empezando en el desarrollo full stack con base técnica sólida y experiencia práctica en aplicaciones web. Aprendo rápido, escribo código pensando en quien lo va a mantener después y me tomo en serio lo que hago. Busco un primer equipo profesional donde sumar, no donde ocupar sitio.
+        </p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Bases de datos</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">2024</span>
+            <span class="stat-label">Prácticas en software</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">Tecnologías clave</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Soft skills base</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HABILIDADES -->
+    <section id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title" class="section-title">Habilidades</h2>
+        <p class="skills-intro glass-marker-text glass-marker-soft" style="margin-bottom: 2rem; color: var(--text-muted);">
+          Conocimiento base funcional en tecnologías, lenguajes y herramientas con las que me he formado y trabajado. 
+        </p>
+        
+        <div class="skills-category">
+          <h3>Lenguajes</h3>
+          <div class="chips-container">
+            <span class="chip lang">Java</span>
+            <span class="chip lang">JavaScript</span>
+            <span class="chip lang">TypeScript</span>
+            <span class="chip lang">SQL</span>
+            <span class="chip lang">HTML</span>
+            <span class="chip lang">CSS</span>
+          </div>
+        </div>
+        
+        <div class="skills-category">
+          <h3>Frameworks</h3>
+          <div class="chips-container">
+            <span class="chip env">Spring Boot</span>
+            <span class="chip env">Angular</span>
+            <span class="chip env">Ionic</span>
+            <span class="chip env">ReactJS</span>
+            <span class="chip env">Flutter</span>
+            <span class="chip env">Expo</span>
+          </div>
+        </div>
+        
+        <div class="skills-category">
+          <h3>Datos y herramientas</h3>
+          <div class="chips-container">
+            <span class="chip db">MySQL</span>
+            <span class="chip db">Postgres</span>
+            <span class="chip db">MongoDB</span>
+            <span class="chip db">Firebase</span>
+            <span class="chip db">pgAdmin</span>
+            <span class="chip db">MySQL WorkBench</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>IDEs</h3>
+          <div class="chips-container">
+            <span class="chip tools">Eclipse</span>
+            <span class="chip tools">IntelliJ</span>
+            <span class="chip tools">VS Code</span>
+            <span class="chip tools">NetBeans</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Fortalezas</h3>
+          <div class="chips-container">
+            <span class="chip concept">Comunicación</span>
+            <span class="chip concept">Adaptabilidad</span>
+            <span class="chip concept">Trabajo en equipo</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. PROYECTOS -->
+    <section id="proyectos" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="projects-header">
+          <h2 id="experience-title" class="section-title">Experiencia y trayectoria</h2>
+          <div class="project-speed-control">
+            <div
+              id="project-speed-slider"
+              class="project-speed-slider"
+              role="slider"
+              tabindex="0"
+              aria-orientation="horizontal"
+              aria-label="Control de velocidad de partículas en la sección Experiencia y trayectoria"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              aria-valuetext="Muy lenta, 0%"
+              data-tooltip="Velocidad: Muy lenta"
+            >
+              <div class="project-speed-track"></div>
+              <div id="project-speed-fill" class="project-speed-fill"></div>
+              <div id="project-speed-thumb" class="project-speed-thumb"></div>
+            </div>
+          </div>
+        </div>
+        <p class="projects-intro glass-marker-text glass-marker-soft">
+          Resumen directo de la práctica profesional ya realizada, el origen de mi perfil y el enfoque con el que quiero crecer en desarrollo de software.
+        </p>
+        
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3 class="project-title">Inventia Plus S.L.</h3>
+            <span class="project-status">[PRACTICAS] ABR-MAY 2024</span>
+            <p class="project-desc">Periodo de prácticas del 1 de abril al 29 de mayo de 2024, participando en proyectos de diversa índole y apoyando tareas de diseño, desarrollo y salida a producción.</p>
+            <div class="project-stack">Prácticas · Diseño · Desarrollo · Producción</div>
+          </article>
+
+          <article class="project-card">
+            <h3 class="project-title">Enfoque actual</h3>
+            <span class="project-status">[OBJETIVO] FULL STACK</span>
+            <p class="project-desc">Busco consolidarme en desarrollo full stack con una base técnica orientada a Java, JavaScript/TypeScript, frameworks modernos y aplicaciones conectadas a bases de datos.</p>
+            <div class="project-stack">Java · Spring Boot · Angular · React · SQL</div>
+            <div class="project-actions">
+              <a href="https://github.com/EstudiaGit" class="btn btn-outline" aria-label="Ver GitHub de Amós Abelleira">GitHub</a>
+              <a href="mailto:amosabelleira@gmail.com?subject=Oportunidad%20profesional%20-%20CV%20web" class="btn btn-primary" aria-label="Enviar correo a Amós Abelleira">Email</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FORMACIÓN -->
+    <section id="formacion" aria-labelledby="education-title">
+      <div class="container">
+        <h2 id="education-title" class="section-title">Formación</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2024</span>
+            <h3 class="timeline-title">C.F.G.S. Desarrollo de Aplicaciones Multiplataforma</h3>
+            <span class="timeline-place">IES El Rincón · aplicaciones multiplataforma, interfaces y bases de datos</span>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-year">2022</span>
+            <h3 class="timeline-title"><a href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD15.pdf" target="_blank" rel="noopener noreferrer">Programación Java 8 - IFCD15</a></h3>
+            <span class="timeline-place">FEMXA · Java SE 8, POO, excepciones y desarrollo de aplicaciones</span>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-year">2021</span>
+            <h3 class="timeline-title"><a href="https://todofp.es/buscadorcertificados/fichaCP?codCertificado=IFCD0210" target="_blank" rel="noopener noreferrer">Desarrollo de aplicaciones con tecnologías web - IFCD0210</a></h3>
+            <span class="timeline-place">Programación en entorno cliente, entorno servidor e implantación de aplicaciones web</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACTO -->
+    <section id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-header">
+          <h2 id="contact-title" class="section-title">Contacto</h2>
+          <div class="contact-beat-control">
+            <div
+              id="contact-beat-slider"
+              class="contact-beat-slider"
+              role="slider"
+              tabindex="0"
+              aria-orientation="horizontal"
+              aria-label="Control de ritmo cardíaco de partículas en la sección Contacto"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              aria-valuetext="Muy lento, 18 bpm"
+              data-tooltip="Latido: Muy lento"
+            >
+              <div class="contact-beat-track"></div>
+              <div id="contact-beat-fill" class="contact-beat-fill"></div>
+              <div id="contact-beat-thumb" class="contact-beat-thumb"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-container">
+          <p class="contact-intro glass-marker-text">
+            Estoy abierto a oportunidades junior y a procesos donde pueda seguir creciendo en desarrollo full stack. El contacto más directo es por email, teléfono y GitHub.
+          </p>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <h3>Email</h3>
+              <p>Canal principal para propuestas laborales, entrevistas y seguimiento.</p>
+              <p class="contact-value">amosabelleira@gmail.com</p>
+              <a
+                class="btn btn-outline contact-action"
+                href="mailto:amosabelleira@gmail.com?subject=Oportunidad%20profesional%20-%20CV%20web"
+                aria-label="Enviar correo a Amós Abelleira"
+              >
+                Enviar email
+              </a>
+            </article>
+
+            <article class="contact-card">
+              <h3>Teléfono</h3>
+              <p>Vía rápida para una primera toma de contacto o seguimiento directo.</p>
+              <p class="contact-value">619 427 410</p>
+              <a
+                class="btn btn-outline contact-action"
+                href="tel:+34619427410"
+                aria-label="Llamar a Amós Abelleira"
+              >
+                Llamar
+              </a>
+            </article>
+
+            <article class="contact-card">
+              <h3>GitHub</h3>
+              <p>Código, evolución técnica y referencia pública de mi perfil profesional.</p>
+              <p class="contact-value">github.com/EstudiaGit</p>
+              <a
+                class="btn btn-outline contact-action"
+                href="https://github.com/EstudiaGit"
+                aria-label="Abrir GitHub de Amós Abelleira"
+              >
+                Ver GitHub
+              </a>
+            </article>
+          </div>
+
+          <div class="availability-box">
+            <h3 class="availability-title">Disponibilidad</h3>
+            <ul class="availability-list">
+              <li>Disponible para oportunidades junior, prácticas ampliadas o colaboraciones técnicas.</li>
+              <li>Perfil orientado a desarrollo full stack y aplicaciones web conectadas a bases de datos.</li>
+              <li>Aporto base técnica reciente y experiencia previa en entornos exigentes con trato directo al cliente.</li>
+            </ul>
+          </div>
+
+          <p class="contact-note glass-marker-text">
+            Esta versión web resume el mismo perfil del PDF y me permite compartir mi trayectoria de forma más clara y directa.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">
+        &copy; <span id="current-year"></span> Amós Abelleira. CV web orientado a oportunidades full stack.
+      </p>
+      <div class="footer-links">
+        <a href="#hero">Inicio</a>
+        <a href="https://github.com/EstudiaGit">GitHub</a>
+        <a href="mailto:amosabelleira@gmail.com?subject=Contacto%20desde%20CV%20web">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS LOGIC -->
+  <script>
+    document.body.classList.add('js-enhanced');
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 1. Navbar glass effect with requestAnimationFrame
+    const header = document.getElementById('header');
+    if (header) {
+      let ticking = false;
+      const updateHeaderOnScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeaderOnScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+    }
+
+    // 2. Mobile menu behavior and keyboard support
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    const setMenuState = (open) => {
+      if (!menuToggle || !navLinks) return;
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.textContent = open ? '[X]' : '[=]';
+      navLinks.classList.toggle('active', open);
+    };
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        setMenuState(!isExpanded);
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMenuState(false));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          setMenuState(false);
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (window.innerWidth > 768) return;
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const clickInsideMenu = navLinks.contains(target) || menuToggle.contains(target);
+        if (!clickInsideMenu) setMenuState(false);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) setMenuState(false);
+      });
+    }
+
+    // 3. Theme toggle in JS memory only
+    const themeToggle = document.getElementById('theme-toggle');
+    let isLightMode = false;
+
+    const updateTheme = () => {
+      document.body.classList.toggle('light', isLightMode);
+      if (!themeToggle) return;
+      themeToggle.textContent = isLightMode ? 'LIGHT' : 'DARK';
+      themeToggle.setAttribute('aria-pressed', String(isLightMode));
+    };
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        isLightMode = !isLightMode;
+        updateTheme();
+      });
+    }
+
+    // 4. Typewriter effect
+    const phrases = ["Desarrollador Full Stack", "Java · Angular · React", "Orientado a apps web", "Disponible para contratación"];
+    const typewriterElement = document.getElementById('typewriter');
+
+    if (typewriterElement) {
+      if (reduceMotion) {
+        typewriterElement.textContent = phrases[0];
+      } else {
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+
+        const typeEffect = () => {
+          const currentPhrase = phrases[phraseIndex];
+
+          if (isDeleting) {
+            typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex -= 1;
+          } else {
+            typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex += 1;
+          }
+
+          let timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+          if (!isDeleting && charIndex === currentPhrase.length) {
+            timeout = pauseTime;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            timeout = 500;
+          }
+
+          window.setTimeout(typeEffect, timeout);
+        };
+
+        window.setTimeout(typeEffect, 1000);
+      }
+    }
+
+    // 5. Section reveal + active nav link
+    const sections = Array.from(document.querySelectorAll('main section'));
+    const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    const navMap = new Map(navSectionLinks.map((link) => [link.getAttribute('href')?.slice(1), link]));
+
+    if (sections.length) {
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+
+        sections.forEach((section) => revealObserver.observe(section));
+      } else {
+        sections.forEach((section) => section.classList.add('visible'));
+      }
+    }
+
+    if ('IntersectionObserver' in window && navSectionLinks.length) {
+      const activeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('id');
+          if (!id || !entry.isIntersecting) return;
+          navSectionLinks.forEach((link) => link.removeAttribute('aria-current'));
+          const activeLink = navMap.get(id);
+          if (activeLink) activeLink.setAttribute('aria-current', 'page');
+        });
+      }, { threshold: 0.45, rootMargin: '-20% 0px -45% 0px' });
+
+      ['sobre-mi', 'habilidades', 'proyectos', 'formacion', 'contacto'].forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) activeObserver.observe(section);
+      });
+    }
+
+    // 6. Dynamic footer year
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+
+    // 7. ASCII cylindrical stream + section-driven wind particles
+    (() => {
+      const canvas = document.getElementById('ascii-sphere-bg');
+      if (!(canvas instanceof HTMLCanvasElement)) return;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const CHARSET = ' .,:-~=+*#%@';
+      const LIGHT_VECTOR = { x: -0.42, y: 0.65, z: 0.63 };
+      const ASCII_COLOR_DARK = '186,255,206';
+      const ASCII_COLOR_LIGHT = '86,154,108';
+      const PARTICLE_CHARS = '.,:;*+';
+      const PARTICLE_COLOR_DARK = '212,255,227';
+      const PARTICLE_COLOR_LIGHT = '92,166,116';
+      const MAX_PIXEL_RATIO = 1.75;
+      const BASE_CENTER_Y = 0.46;
+      const FLOW_SPEED = 0.06;
+      const BREEZE_SPEED = 0.68;
+      const BREEZE_WAVES = 2; // entero para continuidad exacta cabeza-cola
+      const BREEZE_AMPLITUDE_Y = 0.14;
+      const BREEZE_AMPLITUDE_Z = 0.09;
+      const RADIUS_BREATH = 0.03;
+      const RANDOM_WIND_STRENGTH = 0.22;
+      const VOLUME_GAMMA = 0.74;
+      const VOLUME_BOOST = 0.16;
+      const AO_STRENGTH = 0.22;
+      const PARTICLE_COUNT_MOBILE = 120;
+      const PARTICLE_COUNT_DESKTOP = 220;
+      const PARTICLE_FLOW_FACTOR = 0.86;
+      const PARTICLE_DRIFT = 0.42;
+      const PARTICLE_LIFE_MIN = 2.4;
+      const PARTICLE_LIFE_MAX = 6.2;
+      const TAU = Math.PI * 2;
+      const EFFECT_SECTION_IDS = ['sobre-mi', 'habilidades', 'proyectos', 'formacion', 'contacto'];
+      const SECTION_EFFECTS = {
+        'sobre-mi': {
+          mode: 'aura',
+          particleChars: '.,:;*',
+          particleDensity: 1.92,
+          shapeScaleMul: 1.34,
+          coreMul: 1.08,
+          flowMul: 0.94,
+          breezeYMul: 1.2,
+          breezeZMul: 1.14,
+          randomMul: 0.96,
+          speedMul: 0.98,
+          driftMul: 1.04,
+          orbitStrength: 0.24,
+          laneStrength: 0,
+          convergeStrength: 0.1,
+          pulseMul: 1.38,
+          trailStrength: 0.16,
+          volumeMul: 1.14,
+          alphaMul: 1.18
+        },
+        'habilidades': {
+          mode: 'orbit',
+          particleChars: '.*+x#',
+          particleDensity: 1.88,
+          shapeScaleMul: 1,
+          coreMul: 0.24,
+          flowMul: 1.24,
+          breezeYMul: 1.42,
+          breezeZMul: 1.34,
+          randomMul: 1.28,
+          speedMul: 1.36,
+          driftMul: 1.28,
+          orbitStrength: 1.58,
+          laneStrength: 0,
+          convergeStrength: 0.08,
+          pulseMul: 1.12,
+          trailStrength: 0.26,
+          volumeMul: 1.26,
+          alphaMul: 1.28
+        },
+        'proyectos': {
+          mode: 'edge_race',
+          particleChars: '-=~*>',
+          particleDensity: 2.18,
+          shapeScaleMul: 1,
+          coreMul: 0.1,
+          flowMul: 2.32,
+          breezeYMul: 0.96,
+          breezeZMul: 0.88,
+          randomMul: 0.74,
+          speedMul: 2.22,
+          driftMul: 0.82,
+          orbitStrength: 0.16,
+          laneStrength: 0,
+          convergeStrength: 0,
+          pulseMul: 0.74,
+          trailStrength: 0.78,
+          volumeMul: 1.34,
+          alphaMul: 1.38
+        },
+        'formacion': {
+          mode: 'ribbon',
+          particleChars: '.:|=¦',
+          particleDensity: 1.62,
+          shapeScaleMul: 1,
+          coreMul: 0.08,
+          flowMul: 0.68,
+          breezeYMul: 0.76,
+          breezeZMul: 0.64,
+          randomMul: 0.56,
+          speedMul: 0.84,
+          driftMul: 0.72,
+          orbitStrength: 0.14,
+          laneStrength: 1.08,
+          convergeStrength: 0,
+          pulseMul: 0.66,
+          trailStrength: 0.34,
+          volumeMul: 1.04,
+          alphaMul: 1.06
+        },
+        'contacto': {
+          mode: 'heartbeat',
+          particleChars: '.:oO@#',
+          particleDensity: 2.3,
+          shapeScaleMul: 1.16,
+          coreMul: 0.92,
+          flowMul: 0.52,
+          breezeYMul: 0.78,
+          breezeZMul: 0.72,
+          randomMul: 0.34,
+          speedMul: 0.68,
+          driftMul: 0.66,
+          orbitStrength: 0.08,
+          laneStrength: 0,
+          convergeStrength: 0.22,
+          pulseMul: 0.52,
+          trailStrength: 0.18,
+          volumeMul: 1.34,
+          alphaMul: 1.48
+        }
+      };
+      const EFFECT_NUMERIC_KEYS = [
+        'particleDensity', 'shapeScaleMul', 'coreMul', 'flowMul', 'breezeYMul', 'breezeZMul', 'randomMul',
+        'speedMul', 'driftMul', 'orbitStrength', 'laneStrength', 'convergeStrength',
+        'pulseMul', 'trailStrength', 'volumeMul', 'alphaMul'
+      ];
+      const SECTION_SHAPES = {
+        'sobre-mi': 'sphere',
+        'habilidades': 'star',
+        'proyectos': 'torus',
+        'formacion': 'helix',
+        'contacto': 'sphere'
+      };
+      const SHAPE_TRANSITION_DURATION = 1.45;
+      const SHAPE_DISPERSE_PHASE = 0.24;
+      const SHAPE_SETTLE_PHASE = 0.2;
+      const SHAPE_BASE_SCALE = 2.1;
+      const SHOW_CYLINDER_STREAM = false;
+      const EDGE_RACE_SPEED_MIN = 0.035;
+      const EDGE_RACE_SPEED_MAX = 0.58;
+      const EDGE_RACE_SPEED_DEFAULT = EDGE_RACE_SPEED_MIN;
+      const HEARTBEAT_BPM_MIN = 18;
+      const HEARTBEAT_BPM_MAX = 132;
+      const HEARTBEAT_BPM_DEFAULT = HEARTBEAT_BPM_MIN;
+      const SHAPE_SCALE_FACTORS = {
+        sphere: 1.04,
+        star: 1.22,
+        torus: 1.16,
+        helix: 1.2,
+        at_symbol: 1.08
+      };
+
+      let points = [];
+      let cellSize = 12;
+      let cols = 0;
+      let rows = 0;
+      let charBuffer = [];
+      let depthBuffer = new Float32Array(0);
+      let shadeBuffer = new Float32Array(0);
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let cylinderRadius = Math.min(width, height) * 0.28;
+      let cylinderLength = Math.max(width, height) * 2.52;
+      let particles = [];
+      let gustValue = 1;
+      let gustTarget = 1;
+      let gustTimer = 0;
+      let lastTimestamp = 0;
+      let frameId = 0;
+      let isRunning = false;
+      let activeEffectId = 'sobre-mi';
+      let targetEffect = { ...SECTION_EFFECTS[activeEffectId] };
+      let currentEffect = { ...targetEffect };
+      let activeShapeId = SECTION_SHAPES[activeEffectId];
+      let fromShapeId = activeShapeId;
+      let toShapeId = activeShapeId;
+      let shapeTransitionProgress = 1;
+      let shapeTransitionTime = SHAPE_TRANSITION_DURATION;
+      let isShapeTransitioning = false;
+      let edgeRaceSpeedValue = Math.max(
+        0,
+        Math.min(1, (EDGE_RACE_SPEED_DEFAULT - EDGE_RACE_SPEED_MIN) / (EDGE_RACE_SPEED_MAX - EDGE_RACE_SPEED_MIN))
+      );
+      let edgeRaceSpeedFactor = EDGE_RACE_SPEED_DEFAULT;
+      let heartbeatRateValue = Math.max(
+        0,
+        Math.min(1, (HEARTBEAT_BPM_DEFAULT - HEARTBEAT_BPM_MIN) / (HEARTBEAT_BPM_MAX - HEARTBEAT_BPM_MIN))
+      );
+      let heartbeatBpm = HEARTBEAT_BPM_DEFAULT;
+      let sectionObserver = null;
+      const sectionVisibility = new Map(EFFECT_SECTION_IDS.map((id) => [id, 0]));
+      const projectSpeedSlider = document.getElementById('project-speed-slider');
+      const projectSpeedFill = document.getElementById('project-speed-fill');
+      const projectSpeedThumb = document.getElementById('project-speed-thumb');
+      const contactBeatSlider = document.getElementById('contact-beat-slider');
+      const contactBeatFill = document.getElementById('contact-beat-fill');
+      const contactBeatThumb = document.getElementById('contact-beat-thumb');
+
+      document.body.setAttribute('data-fx-section', activeEffectId);
+
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+      const randomBetween = (min, max) => min + Math.random() * (max - min);
+      const pickParticleChar = (charSet) => {
+        if (!charSet || !charSet.length) return '.';
+        return charSet[Math.floor(Math.random() * charSet.length)];
+      };
+      const repeatRange = (value, period) => {
+        const wrapped = value % period;
+        return wrapped < 0 ? wrapped + period : wrapped;
+      };
+      const getHeartbeatStrength = (time) => {
+        const cycle = 60 / Math.max(HEARTBEAT_BPM_MIN, heartbeatBpm);
+        const phase = repeatRange(time, cycle) / cycle;
+        const hit1 = Math.exp(-Math.pow((phase - 0.12) / 0.045, 2));
+        const hit2 = Math.exp(-Math.pow((phase - 0.275) / 0.055, 2));
+        const tail = Math.exp(-Math.pow((phase - 0.54) / 0.24, 2));
+        return clamp(hit1 * 1.05 + hit2 * 0.74 + tail * 0.08, 0, 1.7);
+      };
+      const easeInOutCubic = (t) => (t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2);
+      const lerp = (a, b, t) => a + (b - a) * t;
+      const getRaceSpeedLabel = (value01) => {
+        if (value01 < 0.18) return 'Muy lenta';
+        if (value01 < 0.42) return 'Lenta';
+        if (value01 < 0.72) return 'Media';
+        return 'Rápida';
+      };
+      const getHeartbeatRateLabel = (value01) => {
+        if (value01 < 0.15) return 'Reposo';
+        if (value01 < 0.35) return 'Muy lento';
+        if (value01 < 0.45) return 'Calmo';
+        if (value01 < 0.72) return 'Medio';
+        return 'Intenso';
+      };
+      const updateEdgeRaceSpeedFromValue = (value01) => {
+        const next = clamp(value01, 0, 1);
+        edgeRaceSpeedValue = next;
+        // Curva exponencial: hace que el tramo lento sea claramente mas lento.
+        const shaped = Math.pow(next, 1.75);
+        edgeRaceSpeedFactor = EDGE_RACE_SPEED_MIN + (EDGE_RACE_SPEED_MAX - EDGE_RACE_SPEED_MIN) * shaped;
+
+        const percent = Math.round(next * 100);
+        const label = getRaceSpeedLabel(next);
+
+        if (projectSpeedFill instanceof HTMLElement) {
+          projectSpeedFill.style.width = `${percent}%`;
+        }
+        if (projectSpeedThumb instanceof HTMLElement) {
+          projectSpeedThumb.style.left = `${percent}%`;
+        }
+        if (projectSpeedSlider instanceof HTMLElement) {
+          projectSpeedSlider.setAttribute('aria-valuenow', String(percent));
+          projectSpeedSlider.setAttribute('aria-valuetext', `${label}, ${percent}%`);
+          projectSpeedSlider.setAttribute('data-tooltip', `Velocidad: ${label}`);
+        }
+      };
+      const updateHeartbeatRateFromValue = (value01) => {
+        const next = clamp(value01, 0, 1);
+        heartbeatRateValue = next;
+        const shaped = Math.pow(next, 1.4);
+        heartbeatBpm = HEARTBEAT_BPM_MIN + (HEARTBEAT_BPM_MAX - HEARTBEAT_BPM_MIN) * shaped;
+
+        const percent = Math.round(next * 100);
+        const bpmRounded = Math.round(heartbeatBpm);
+        const label = getHeartbeatRateLabel(next);
+
+        if (contactBeatFill instanceof HTMLElement) {
+          contactBeatFill.style.width = `${percent}%`;
+        }
+        if (contactBeatThumb instanceof HTMLElement) {
+          contactBeatThumb.style.left = `${percent}%`;
+        }
+        if (contactBeatSlider instanceof HTMLElement) {
+          contactBeatSlider.setAttribute('aria-valuenow', String(percent));
+          contactBeatSlider.setAttribute('aria-valuetext', `${label}, ${bpmRounded} bpm`);
+          contactBeatSlider.setAttribute('data-tooltip', `Latido: ${label} · ${bpmRounded} bpm`);
+        }
+      };
+      const setEdgeRaceSpeedFromClientX = (clientX) => {
+        if (!(projectSpeedSlider instanceof HTMLElement)) return;
+        const rect = projectSpeedSlider.getBoundingClientRect();
+        if (!rect.width) return;
+        const ratio = clamp((clientX - rect.left) / rect.width, 0, 1);
+        updateEdgeRaceSpeedFromValue(ratio);
+      };
+      const setHeartbeatRateFromClientX = (clientX) => {
+        if (!(contactBeatSlider instanceof HTMLElement)) return;
+        const rect = contactBeatSlider.getBoundingClientRect();
+        if (!rect.width) return;
+        const ratio = clamp((clientX - rect.left) / rect.width, 0, 1);
+        updateHeartbeatRateFromValue(ratio);
+      };
+      const setShapeImmediately = (shapeId) => {
+        activeShapeId = shapeId;
+        fromShapeId = shapeId;
+        toShapeId = shapeId;
+        shapeTransitionProgress = 1;
+        shapeTransitionTime = SHAPE_TRANSITION_DURATION;
+        isShapeTransitioning = false;
+      };
+      const getShapeScale = (shapeId, time) => {
+        const shapeMul = SHAPE_SCALE_FACTORS[shapeId] || 1;
+        const sectionMul = currentEffect.shapeScaleMul || 1;
+        const pulse = 1 + Math.sin(time * (0.46 + currentEffect.pulseMul * 0.16)) * 0.04 * currentEffect.pulseMul;
+        const heartbeatPulseScale = 0.035 + heartbeatRateValue * 0.145;
+        const heartBeatPulse = activeEffectId === 'contacto'
+          ? 1 + getHeartbeatStrength(time) * heartbeatPulseScale
+          : 1;
+        return cylinderRadius * SHAPE_BASE_SCALE * shapeMul * sectionMul * pulse * heartBeatPulse;
+      };
+      const beginShapeTransition = (nextShapeId) => {
+        if (!nextShapeId) return;
+        if (nextShapeId === toShapeId && isShapeTransitioning) return;
+        fromShapeId = isShapeTransitioning ? toShapeId : activeShapeId;
+        activeShapeId = fromShapeId;
+        toShapeId = nextShapeId;
+        shapeTransitionTime = 0;
+        shapeTransitionProgress = 0;
+        isShapeTransitioning = true;
+
+        for (let i = 0; i < particles.length; i += 1) {
+          const particle = particles[i];
+          particle.disperseX = randomBetween(-1, 1);
+          particle.disperseY = randomBetween(-1, 1);
+          particle.disperseZ = randomBetween(-1, 1);
+          const norm = Math.hypot(particle.disperseX, particle.disperseY, particle.disperseZ) || 1;
+          particle.disperseX /= norm;
+          particle.disperseY /= norm;
+          particle.disperseZ /= norm;
+        }
+      };
+      const updateShapeTransition = (deltaSeconds) => {
+        if (!isShapeTransitioning) return;
+
+        shapeTransitionTime += deltaSeconds;
+        shapeTransitionProgress = clamp(shapeTransitionTime / SHAPE_TRANSITION_DURATION, 0, 1);
+
+        if (shapeTransitionProgress >= 1) {
+          isShapeTransitioning = false;
+          activeShapeId = toShapeId;
+          fromShapeId = toShapeId;
+        }
+      };
+      const sampleShapePoint = (shapeId, u, v, time, scale) => {
+        if (shapeId === 'star') {
+          const theta = u * TAU;
+          const phi = Math.acos(1 - 2 * v);
+          const spike = Math.abs(Math.sin(theta * 5) * Math.cos(phi * 3));
+          const radius = scale * (0.34 + Math.pow(spike, 0.6) * 0.8);
+          return {
+            x: radius * Math.sin(phi) * Math.cos(theta),
+            y: radius * Math.cos(phi),
+            z: radius * Math.sin(phi) * Math.sin(theta)
+          };
+        }
+
+        if (shapeId === 'torus') {
+          const theta = u * TAU;
+          const phi = v * TAU;
+          const major = scale * 0.78;
+          const minor = scale * 0.28 * (0.88 + Math.sin(time * 1.2 + theta * 3) * 0.12);
+          const ring = major + minor * Math.cos(phi);
+          return {
+            x: Math.cos(theta) * ring,
+            y: Math.sin(phi) * minor * 1.05,
+            z: Math.sin(theta) * ring
+          };
+        }
+
+        if (shapeId === 'helix') {
+          const turns = 4.6;
+          const strand = v < 0.5 ? -1 : 1;
+          const strandMix = v < 0.5 ? v * 2 : (v - 0.5) * 2;
+          const angle = u * TAU * turns + strand * Math.PI * 0.5;
+          const radius = scale * (0.3 + (strandMix - 0.5) * 0.08);
+          return {
+            x: Math.cos(angle) * radius,
+            y: (u - 0.5) * scale * 2.3,
+            z: Math.sin(angle) * radius
+          };
+        }
+
+        if (shapeId === 'at_symbol') {
+          const turns = 2.55;
+          const angle = u * TAU * turns;
+          const spiral = scale * (0.18 + 0.58 * (1 - v));
+          let x = Math.cos(angle) * spiral;
+          let y = Math.sin(angle) * spiral * 0.8;
+          let z = Math.sin(angle * 0.85 + v * TAU) * scale * 0.16;
+
+          if (u > 0.78) {
+            const k = (u - 0.78) / 0.22;
+            x = lerp(x, scale * (0.64 + k * 0.9), k);
+            y = lerp(y, scale * (0.21 - 0.12 * k), k);
+            z *= 0.4;
+          }
+
+          return { x, y, z };
+        }
+
+        const theta = u * TAU;
+        const phi = Math.acos(1 - 2 * v);
+        const radius = scale * (0.84 + Math.sin(time * 0.9 + theta * 2) * 0.06);
+        return {
+          x: radius * Math.sin(phi) * Math.cos(theta),
+          y: radius * Math.cos(phi),
+          z: radius * Math.sin(phi) * Math.sin(theta)
+        };
+      };
+      const setSectionEffect = (sectionId) => {
+        const preset = SECTION_EFFECTS[sectionId] || SECTION_EFFECTS['sobre-mi'];
+        const nextShapeId = SECTION_SHAPES[sectionId] || SECTION_SHAPES['sobre-mi'];
+        const changed = sectionId !== activeEffectId;
+        activeEffectId = sectionId;
+        document.body.setAttribute('data-fx-section', activeEffectId);
+        targetEffect = { ...preset };
+
+        if (nextShapeId !== toShapeId) {
+          if (particles.length && !reduceMotion) {
+            beginShapeTransition(nextShapeId);
+          } else {
+            setShapeImmediately(nextShapeId);
+          }
+        }
+
+        if (changed && particles.length) {
+          for (let i = 0; i < particles.length; i += 1) {
+            particles[i].char = pickParticleChar(targetEffect.particleChars);
+            particles[i].life = Math.min(particles[i].life, particles[i].maxLife * 0.72);
+          }
+        }
+      };
+      const blendSectionEffect = (deltaSeconds) => {
+        const blend = 1 - Math.exp(-deltaSeconds * 5.2);
+        for (let i = 0; i < EFFECT_NUMERIC_KEYS.length; i += 1) {
+          const key = EFFECT_NUMERIC_KEYS[i];
+          const target = targetEffect[key];
+          currentEffect[key] += (target - currentEffect[key]) * blend;
+        }
+
+        currentEffect.mode = targetEffect.mode;
+        currentEffect.particleChars = targetEffect.particleChars;
+      };
+      const getTargetParticleCount = () => {
+        const baseCount = width < 768 ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP;
+        return Math.max(36, Math.round(baseCount * currentEffect.particleDensity));
+      };
+      const syncParticlePool = () => {
+        const targetCount = getTargetParticleCount();
+        if (particles.length < targetCount) {
+          const addCount = Math.min(targetCount - particles.length, 34);
+          for (let i = 0; i < addCount; i += 1) {
+            const particle = createParticle();
+            resetParticle(particle, true);
+            particles.push(particle);
+          }
+        } else if (particles.length > targetCount) {
+          particles.length = Math.max(targetCount, particles.length - 34);
+        }
+      };
+      const pickSectionFromViewport = () => {
+        const viewportAnchor = window.innerHeight * 0.45;
+        let bestId = activeEffectId;
+        let bestScore = -Infinity;
+
+        EFFECT_SECTION_IDS.forEach((id) => {
+          const section = document.getElementById(id);
+          if (!(section instanceof HTMLElement)) return;
+
+          const rect = section.getBoundingClientRect();
+          const visible = clamp((Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)) / Math.max(rect.height, 1), 0, 1);
+          const center = rect.top + rect.height * 0.5;
+          const distance = Math.abs(center - viewportAnchor) / Math.max(window.innerHeight, 1);
+          const score = visible * 2 - distance;
+
+          if (score > bestScore) {
+            bestScore = score;
+            bestId = id;
+          }
+        });
+
+        return bestId;
+      };
+      const setupSectionEffectObserver = () => {
+        const sections = EFFECT_SECTION_IDS
+          .map((id) => document.getElementById(id))
+          .filter((section) => section instanceof HTMLElement);
+
+        if (!sections.length) return;
+
+        const applyBestMatch = () => {
+          let bestId = activeEffectId;
+          let bestRatio = 0;
+          sectionVisibility.forEach((ratio, id) => {
+            if (ratio > bestRatio) {
+              bestRatio = ratio;
+              bestId = id;
+            }
+          });
+
+          if (bestRatio < 0.14) {
+            bestId = pickSectionFromViewport();
+          }
+
+          if (bestId !== activeEffectId) {
+            setSectionEffect(bestId);
+          }
+        };
+
+        if ('IntersectionObserver' in window) {
+          sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              sectionVisibility.set(entry.target.id, entry.intersectionRatio);
+            });
+            applyBestMatch();
+          }, {
+            threshold: [0.1, 0.2, 0.35, 0.55, 0.75],
+            rootMargin: '-14% 0px -22% 0px'
+          });
+
+          sections.forEach((section) => sectionObserver?.observe(section));
+        } else {
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(() => {
+              ticking = false;
+              const next = pickSectionFromViewport();
+              if (next !== activeEffectId) setSectionEffect(next);
+            });
+          }, { passive: true });
+        }
+
+        const initial = pickSectionFromViewport();
+        if (initial !== activeEffectId) setSectionEffect(initial);
+      };
+      const updateWindGust = (deltaSeconds) => {
+        gustTimer -= deltaSeconds;
+        if (gustTimer <= 0) {
+          gustTarget = randomBetween(0.72, 1.38);
+          gustTimer = randomBetween(0.7, 2.2);
+        }
+
+        const blend = 1 - Math.exp(-deltaSeconds * 2.4);
+        gustValue += (gustTarget - gustValue) * blend;
+      };
+
+      const sampleAxisMotion = (s, time, seedA, seedB, seedC, globalBreezeY, globalBreezeZ) => {
+        const waveYPhase = s * TAU * BREEZE_WAVES - time * BREEZE_SPEED;
+        const waveZPhase = s * TAU * (BREEZE_WAVES * 2) - time * (BREEZE_SPEED * 0.82) + 0.65;
+        const breathPhase = s * TAU * (BREEZE_WAVES * 3) - time * 0.9;
+        const randomPhaseA = time * (BREEZE_SPEED * (0.55 + seedA * 0.9)) + seedB * TAU;
+        const randomPhaseB = time * (BREEZE_SPEED * (0.42 + seedC * 0.95)) + seedA * TAU;
+        const randomWindY = Math.sin(randomPhaseA + s * TAU)
+          * (cylinderRadius * BREEZE_AMPLITUDE_Y * RANDOM_WIND_STRENGTH * currentEffect.randomMul * gustValue);
+        const randomWindZ = Math.cos(randomPhaseB + s * TAU * 1.3)
+          * (cylinderRadius * BREEZE_AMPLITUDE_Z * RANDOM_WIND_STRENGTH * currentEffect.randomMul * gustValue);
+        const randomBreath = Math.sin(randomPhaseB * 0.8 + s * TAU * 2)
+          * (RADIUS_BREATH * RANDOM_WIND_STRENGTH * currentEffect.randomMul * gustValue);
+        const axisY = globalBreezeY + Math.sin(waveYPhase) * (cylinderRadius * BREEZE_AMPLITUDE_Y * currentEffect.breezeYMul) + randomWindY;
+        const axisZ = globalBreezeZ + Math.cos(waveZPhase) * (cylinderRadius * BREEZE_AMPLITUDE_Z * currentEffect.breezeZMul) + randomWindZ;
+        const radiusScale = clamp(1 + Math.sin(breathPhase) * (RADIUS_BREATH * currentEffect.pulseMul) + randomBreath, 0.72, 1.34);
+
+        return {
+          axisY,
+          axisZ,
+          radiusScale
+        };
+      };
+      const sampleEdgeRacePath = (loopT, laneRatio) => {
+        const marginX = clamp(width * 0.06, 30, 126);
+        const marginY = clamp(height * 0.1, 28, 110);
+        const left = marginX;
+        const right = width - marginX;
+        const top = marginY;
+        const bottom = height - marginY;
+        const spanX = Math.max(24, right - left);
+        const spanY = Math.max(24, bottom - top);
+        const perimeter = spanX * 2 + spanY * 2;
+        let d = repeatRange(loopT, 1) * perimeter;
+        let x = left;
+        let y = top;
+        let nx = 0;
+        let ny = -1;
+
+        if (d < spanX) {
+          x = left + d;
+          y = top;
+          nx = 0;
+          ny = -1;
+        } else if (d < spanX + spanY) {
+          d -= spanX;
+          x = right;
+          y = top + d;
+          nx = 1;
+          ny = 0;
+        } else if (d < spanX * 2 + spanY) {
+          d -= spanX + spanY;
+          x = right - d;
+          y = bottom;
+          nx = 0;
+          ny = 1;
+        } else {
+          d -= spanX * 2 + spanY;
+          x = left;
+          y = bottom - d;
+          nx = -1;
+          ny = 0;
+        }
+
+        const laneThickness = clamp(Math.min(width, height) * 0.085, 14, 56);
+        const laneOffset = (laneRatio - 0.5) * laneThickness;
+        x += nx * laneOffset;
+        y += ny * laneOffset;
+
+        return { x, y };
+      };
+      const screenToWorld = (screenX, screenY, depth, centerX, centerY, perspective, cameraOffset) => ({
+        x: ((screenX - centerX) * depth) / Math.max(1, perspective),
+        y: ((screenY - centerY) * depth) / Math.max(1, perspective),
+        z: depth - cameraOffset
+      });
+
+      if (projectSpeedSlider instanceof HTMLElement) {
+        let activePointerId = null;
+        updateEdgeRaceSpeedFromValue(edgeRaceSpeedValue);
+
+        projectSpeedSlider.addEventListener('pointerdown', (event) => {
+          activePointerId = event.pointerId;
+          projectSpeedSlider.setPointerCapture(event.pointerId);
+          setEdgeRaceSpeedFromClientX(event.clientX);
+        });
+
+        projectSpeedSlider.addEventListener('pointermove', (event) => {
+          if (activePointerId !== event.pointerId) return;
+          setEdgeRaceSpeedFromClientX(event.clientX);
+        });
+
+        const finishDrag = (event) => {
+          if (activePointerId !== event.pointerId) return;
+          if (projectSpeedSlider.hasPointerCapture(event.pointerId)) {
+            projectSpeedSlider.releasePointerCapture(event.pointerId);
+          }
+          activePointerId = null;
+        };
+        projectSpeedSlider.addEventListener('pointerup', finishDrag);
+        projectSpeedSlider.addEventListener('pointercancel', finishDrag);
+
+        projectSpeedSlider.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowUp' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            updateEdgeRaceSpeedFromValue(edgeRaceSpeedValue + 0.05);
+          } else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
+            event.preventDefault();
+            updateEdgeRaceSpeedFromValue(edgeRaceSpeedValue - 0.05);
+          } else if (event.key === 'Home') {
+            event.preventDefault();
+            updateEdgeRaceSpeedFromValue(0);
+          } else if (event.key === 'End') {
+            event.preventDefault();
+            updateEdgeRaceSpeedFromValue(1);
+          }
+        });
+      }
+
+      if (contactBeatSlider instanceof HTMLElement) {
+        let activePointerId = null;
+        updateHeartbeatRateFromValue(heartbeatRateValue);
+
+        contactBeatSlider.addEventListener('pointerdown', (event) => {
+          activePointerId = event.pointerId;
+          contactBeatSlider.setPointerCapture(event.pointerId);
+          setHeartbeatRateFromClientX(event.clientX);
+        });
+
+        contactBeatSlider.addEventListener('pointermove', (event) => {
+          if (activePointerId !== event.pointerId) return;
+          setHeartbeatRateFromClientX(event.clientX);
+        });
+
+        const finishDrag = (event) => {
+          if (activePointerId !== event.pointerId) return;
+          if (contactBeatSlider.hasPointerCapture(event.pointerId)) {
+            contactBeatSlider.releasePointerCapture(event.pointerId);
+          }
+          activePointerId = null;
+        };
+        contactBeatSlider.addEventListener('pointerup', finishDrag);
+        contactBeatSlider.addEventListener('pointercancel', finishDrag);
+
+        contactBeatSlider.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowUp' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            updateHeartbeatRateFromValue(heartbeatRateValue + 0.05);
+          } else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
+            event.preventDefault();
+            updateHeartbeatRateFromValue(heartbeatRateValue - 0.05);
+          } else if (event.key === 'Home') {
+            event.preventDefault();
+            updateHeartbeatRateFromValue(0);
+          } else if (event.key === 'End') {
+            event.preventDefault();
+            updateHeartbeatRateFromValue(1);
+          }
+        });
+      }
+
+      const createParticle = () => ({
+        x: 0,
+        y: 0,
+        z: 0,
+        shapeU: Math.random(),
+        shapeV: Math.random(),
+        disperseX: 0,
+        disperseY: 0,
+        disperseZ: 0,
+        lane: 0,
+        orbitPhase: 0,
+        speedMul: 1,
+        driftMul: 1,
+        life: 1,
+        maxLife: 1,
+        seedA: Math.random(),
+        seedB: Math.random(),
+        seedC: Math.random(),
+        char: PARTICLE_CHARS[0]
+      });
+
+      const resetParticle = (particle, randomX) => {
+        particle.shapeU = Math.random();
+        particle.shapeV = Math.random();
+        const shapeId = toShapeId || activeShapeId;
+        const scale = getShapeScale(shapeId, 0);
+        const shapePoint = sampleShapePoint(shapeId, particle.shapeU, particle.shapeV, 0, scale);
+        const spawnJitter = randomX ? scale * 0.12 : scale * 0.18;
+        particle.x = shapePoint.x + randomBetween(-spawnJitter, spawnJitter);
+        particle.y = shapePoint.y + randomBetween(-spawnJitter, spawnJitter);
+        particle.z = shapePoint.z + randomBetween(-spawnJitter, spawnJitter);
+        particle.lane = randomBetween(-0.95, 0.95);
+        particle.orbitPhase = randomBetween(0, TAU);
+        particle.speedMul = randomBetween(0.75, 1.22);
+        particle.driftMul = randomBetween(0.75, 1.24);
+        particle.maxLife = randomBetween(PARTICLE_LIFE_MIN, PARTICLE_LIFE_MAX);
+        particle.life = particle.maxLife;
+        particle.seedA = Math.random();
+        particle.seedB = Math.random();
+        particle.seedC = Math.random();
+        particle.disperseX = randomBetween(-1, 1);
+        particle.disperseY = randomBetween(-1, 1);
+        particle.disperseZ = randomBetween(-1, 1);
+        const disperseNorm = Math.hypot(particle.disperseX, particle.disperseY, particle.disperseZ) || 1;
+        particle.disperseX /= disperseNorm;
+        particle.disperseY /= disperseNorm;
+        particle.disperseZ /= disperseNorm;
+        particle.char = pickParticleChar(currentEffect.particleChars);
+      };
+
+      const rebuildParticles = () => {
+        const targetCount = getTargetParticleCount();
+        particles = Array.from({ length: targetCount }, () => {
+          const particle = createParticle();
+          resetParticle(particle, true);
+          return particle;
+        });
+      };
+
+      const buildCylindricalPoints = () => {
+        const axialSteps = window.innerWidth < 768 ? 120 : 170;
+        const radialSteps = window.innerWidth < 768 ? 32 : 44;
+        const nextPoints = [];
+
+        for (let axial = 0; axial < axialSteps; axial += 1) {
+          const s = axial / Math.max(1, axialSteps - 1);
+          const windSeedA = Math.random();
+          const windSeedB = Math.random();
+          const windSeedC = Math.random();
+
+          for (let radial = 0; radial < radialSteps; radial += 1) {
+            const v = (radial / radialSteps) * TAU;
+            nextPoints.push({
+              s,
+              v,
+              windSeedA,
+              windSeedB,
+              windSeedC
+            });
+          }
+        }
+
+        points = nextPoints;
+      };
+
+      const resizeScene = () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, MAX_PIXEL_RATIO);
+
+        canvas.width = Math.floor(width * pixelRatio);
+        canvas.height = Math.floor(height * pixelRatio);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'top';
+
+        cellSize = width < 480 ? 6 : (width < 768 ? 7 : 8);
+        cols = Math.max(1, Math.floor(width / cellSize));
+        rows = Math.max(1, Math.floor(height / cellSize));
+
+        charBuffer = new Array(cols * rows).fill(' ');
+        depthBuffer = new Float32Array(cols * rows);
+        shadeBuffer = new Float32Array(cols * rows);
+
+        cylinderRadius = Math.min(width, height) * (width < 768 ? 0.3 : 0.28);
+        cylinderLength = Math.max(width, height) * (width < 768 ? 2.7 : 2.52);
+        buildCylindricalPoints();
+        rebuildParticles();
+      };
+
+      const clearBuffers = () => {
+        charBuffer.fill(' ');
+        depthBuffer.fill(-Infinity);
+        shadeBuffer.fill(0);
+      };
+
+      const applyRotation = (x, y, z, cosY, sinY, cosX, sinX, cosZ, sinZ) => {
+        const xY = x * cosY + z * sinY;
+        const zY = -x * sinY + z * cosY;
+
+        const yX = y * cosX - zY * sinX;
+        const zX = y * sinX + zY * cosX;
+
+        return {
+          x: xY * cosZ - yX * sinZ,
+          y: xY * sinZ + yX * cosZ,
+          z: zX
+        };
+      };
+
+      const projectCylindricalStreamToGrid = (time) => {
+        if (!SHOW_CYLINDER_STREAM || currentEffect.coreMul <= 0.01) return;
+
+        const centerX = width * 0.5;
+        const centerY = height * BASE_CENTER_Y;
+        const perspective = Math.min(width, height) * 1.16;
+        const cameraOffset = cylinderRadius * 6.9;
+        const spinY = 0;
+        const spinX = 0;
+        const spinZ = 0;
+        const travelPeriod = cylinderLength;
+        const travelOffset = repeatRange(time * FLOW_SPEED * currentEffect.flowMul * travelPeriod, travelPeriod) - travelPeriod * 0.5;
+        const copies = [-2, -1, 0, 1, 2];
+        const globalBreezeY = Math.sin(time * BREEZE_SPEED * 0.52) * (cylinderRadius * BREEZE_AMPLITUDE_Y * 0.28 * currentEffect.breezeYMul);
+        const globalBreezeZ = Math.cos(time * BREEZE_SPEED * 0.41) * (cylinderRadius * BREEZE_AMPLITUDE_Z * 0.25 * currentEffect.breezeZMul);
+
+        const cosY = Math.cos(spinY);
+        const sinY = Math.sin(spinY);
+        const cosX = Math.cos(spinX);
+        const sinX = Math.sin(spinX);
+        const cosZ = Math.cos(spinZ);
+        const sinZ = Math.sin(spinZ);
+
+        for (let copyIndex = 0; copyIndex < copies.length; copyIndex += 1) {
+          const copyOffset = copies[copyIndex] * travelPeriod;
+
+          for (let i = 0; i < points.length; i += 1) {
+            const point = points[i];
+            const axisMotion = sampleAxisMotion(
+              point.s,
+              time,
+              point.windSeedA,
+              point.windSeedB,
+              point.windSeedC,
+              globalBreezeY,
+              globalBreezeZ
+            );
+            const axisX = (point.s - 0.5) * cylinderLength + travelOffset + copyOffset;
+            const axisY = axisMotion.axisY;
+            const axisZ = axisMotion.axisZ;
+            const radius = cylinderRadius * axisMotion.radiusScale;
+
+            const cosV = Math.cos(point.v);
+            const sinV = Math.sin(point.v);
+
+            const xLocal = axisX;
+            const yLocal = axisY + cosV * radius;
+            const zLocal = axisZ + sinV * radius;
+
+            const rotatedPoint = applyRotation(xLocal, yLocal, zLocal, cosY, sinY, cosX, sinX, cosZ, sinZ);
+            const depth = rotatedPoint.z + cameraOffset;
+            if (depth <= 1) continue;
+
+            const invDepth = 1 / depth;
+            const screenX = rotatedPoint.x * perspective * invDepth + centerX;
+            const screenY = rotatedPoint.y * perspective * invDepth + centerY;
+            const col = Math.floor(screenX / cellSize);
+            const row = Math.floor(screenY / cellSize);
+
+            if (col < 0 || col >= cols || row < 0 || row >= rows) continue;
+
+            const idx = row * cols + col;
+            if (invDepth <= depthBuffer[idx]) continue;
+
+            const nxLocal = 0;
+            const nyLocal = cosV;
+            const nzLocal = sinV;
+            const rotatedNormal = applyRotation(nxLocal, nyLocal, nzLocal, cosY, sinY, cosX, sinX, cosZ, sinZ);
+            const normalLength = Math.hypot(rotatedNormal.x, rotatedNormal.y, rotatedNormal.z) || 1;
+            const nnx = rotatedNormal.x / normalLength;
+            const nny = rotatedNormal.y / normalLength;
+            const nnz = rotatedNormal.z / normalLength;
+
+            const diffuse = clamp(nnx * LIGHT_VECTOR.x + nny * LIGHT_VECTOR.y + nnz * LIGHT_VECTOR.z, 0, 1);
+            const rim = clamp(1 - Math.abs(nnz), 0, 1);
+            const specular = Math.pow(diffuse, 7 - currentEffect.volumeMul * 1.6) * (0.1 + currentEffect.volumeMul * 0.08);
+            const ao = 1 - AO_STRENGTH * Math.pow(1 - Math.abs(cosV), 1.2);
+            const shade = clamp((0.11 + diffuse * 0.67 + rim * (0.16 + currentEffect.volumeMul * 0.08) + specular + (VOLUME_BOOST * currentEffect.volumeMul) * Math.max(0, nnz)) * ao, 0, 1);
+            const coreShade = clamp((shade - 0.06) * currentEffect.coreMul, 0, 1);
+            const charIndex = Math.floor(Math.pow(coreShade, VOLUME_GAMMA - currentEffect.volumeMul * 0.06) * (CHARSET.length - 1));
+
+            if (charIndex <= 0) continue;
+
+            charBuffer[idx] = CHARSET[charIndex];
+            depthBuffer[idx] = invDepth;
+            shadeBuffer[idx] = coreShade;
+          }
+        }
+      };
+
+      const updateWindParticles = (deltaSeconds, time) => {
+        if (!particles.length) return;
+
+        const mode = currentEffect.mode;
+        const centerX = width * 0.5;
+        const centerY = height * BASE_CENTER_Y;
+        const perspective = Math.min(width, height) * 1.16;
+        const cameraOffset = cylinderRadius * 6.9;
+        const fromScale = getShapeScale(fromShapeId, time);
+        const toScale = getShapeScale(toShapeId, time);
+        const transition = isShapeTransitioning ? shapeTransitionProgress : 1;
+        const settleStart = 1 - SHAPE_SETTLE_PHASE;
+        const morphSpan = Math.max(0.001, settleStart - SHAPE_DISPERSE_PHASE);
+        const randomWind = cylinderRadius * 0.08 * currentEffect.randomMul * gustValue;
+        const basePulseWave = 1 + Math.sin(time * (0.9 + currentEffect.pulseMul * 0.12)) * 0.04 * currentEffect.pulseMul;
+        const heartbeatWaveScale = 0.03 + heartbeatRateValue * 0.12;
+        const pulseWave = activeEffectId === 'contacto'
+          ? basePulseWave * (1 + getHeartbeatStrength(time) * heartbeatWaveScale)
+          : basePulseWave;
+
+        for (let i = 0; i < particles.length; i += 1) {
+          const particle = particles[i];
+          particle.life -= deltaSeconds * (0.38 + currentEffect.speedMul * 0.26);
+          const spinOffset = repeatRange(time * (0.012 + currentEffect.flowMul * 0.014) + particle.seedC * 0.03, 1);
+          const shapeU = repeatRange(particle.shapeU + spinOffset, 1);
+          const shapeV = repeatRange(
+            particle.shapeV + Math.sin(time * 0.08 + particle.seedA * TAU) * 0.0025,
+            1
+          );
+          const fromPoint = sampleShapePoint(fromShapeId, shapeU, shapeV, time, fromScale);
+          const toPoint = sampleShapePoint(toShapeId, shapeU, shapeV, time, toScale);
+          let targetX = toPoint.x;
+          let targetY = toPoint.y;
+          let targetZ = toPoint.z;
+
+          if (isShapeTransitioning) {
+            if (transition <= SHAPE_DISPERSE_PHASE) {
+              const burstT = easeInOutCubic(clamp(transition / SHAPE_DISPERSE_PHASE, 0, 1));
+              const burstScale = fromScale * (0.24 + particle.seedA * 0.2) * burstT;
+              targetX = fromPoint.x + particle.disperseX * burstScale;
+              targetY = fromPoint.y + particle.disperseY * burstScale;
+              targetZ = fromPoint.z + particle.disperseZ * burstScale;
+            } else if (transition >= settleStart) {
+              const settleT = easeInOutCubic(clamp((transition - settleStart) / SHAPE_SETTLE_PHASE, 0, 1));
+              const residual = (1 - settleT) * toScale * 0.06;
+              targetX = toPoint.x + particle.disperseX * residual;
+              targetY = toPoint.y + particle.disperseY * residual;
+              targetZ = toPoint.z + particle.disperseZ * residual;
+            } else {
+              const morphT = easeInOutCubic(clamp((transition - SHAPE_DISPERSE_PHASE) / morphSpan, 0, 1));
+              const drift = Math.sin(morphT * Math.PI) * fromScale * (0.12 + particle.seedB * 0.16);
+              targetX = lerp(fromPoint.x, toPoint.x, morphT) + particle.disperseX * drift;
+              targetY = lerp(fromPoint.y, toPoint.y, morphT) + particle.disperseY * drift;
+              targetZ = lerp(fromPoint.z, toPoint.z, morphT) + particle.disperseZ * drift;
+            }
+          } else {
+            targetX *= pulseWave;
+            targetY *= pulseWave;
+            targetZ *= pulseWave;
+          }
+
+          if (mode === 'aura') {
+            const auraPulse = 1 + Math.sin(time * 1.16 + particle.seedB * TAU) * (0.08 * currentEffect.pulseMul);
+            targetX *= auraPulse;
+            targetY *= auraPulse;
+            targetZ *= auraPulse;
+          } else if (mode === 'heartbeat') {
+            const beat = getHeartbeatStrength(time + particle.seedA * 0.04);
+            const beatJolt = 1 + beat * (0.02 + heartbeatRateValue * 0.09);
+            targetX *= beatJolt;
+            targetY *= beatJolt;
+            targetZ *= beatJolt;
+          } else if (mode === 'orbit') {
+            particle.orbitPhase += deltaSeconds * (0.62 + particle.seedB * 1.2) * currentEffect.orbitStrength;
+            const orbitRadius = cylinderRadius * (0.05 + 0.09 * particle.seedA) * currentEffect.orbitStrength;
+            targetX += Math.cos(particle.orbitPhase) * orbitRadius;
+            targetZ += Math.sin(particle.orbitPhase) * orbitRadius;
+          } else if (mode === 'comet') {
+            targetX += Math.sin(time * (0.92 + particle.seedA * 0.45) + particle.seedB * TAU) * (cylinderRadius * 0.14);
+            targetY += Math.cos(time * 2.1 + particle.seedC * TAU) * (cylinderRadius * 0.04);
+            if (Math.random() < deltaSeconds * 2.3) {
+              particle.char = pickParticleChar(currentEffect.particleChars);
+            }
+          } else if (mode === 'ribbon') {
+            targetY = targetY * (1.08 + currentEffect.laneStrength * 0.32) + particle.lane * cylinderRadius * 0.08 * currentEffect.laneStrength;
+            targetZ *= clamp(0.62 - currentEffect.laneStrength * 0.18, 0.36, 0.8);
+          } else if (mode === 'converge') {
+            const pulse = 0.5 + 0.5 * Math.sin(time * 1.28 + particle.seedA * TAU);
+            const pull = currentEffect.convergeStrength * (0.2 + pulse * 0.28);
+            targetX *= clamp(1 - pull * 0.12, 0.52, 1);
+            targetY *= clamp(1 - pull * 0.22, 0.32, 1);
+            targetZ *= clamp(1 - pull * 0.22, 0.32, 1);
+          }
+
+          const windPhaseA = time * (0.38 + particle.seedA * 0.9) + particle.seedB * TAU;
+          const windPhaseB = time * (0.44 + particle.seedB * 0.7) + particle.seedC * TAU;
+          const windPhaseC = time * (0.52 + particle.seedC * 0.6) + particle.seedA * TAU;
+          targetX += Math.sin(windPhaseA) * randomWind * 0.45;
+          targetY += Math.cos(windPhaseB) * randomWind * 0.7;
+          targetZ += Math.sin(windPhaseC) * randomWind * 0.58;
+
+          if (mode === 'edge_race') {
+            const raceSpeed = (0.16 + currentEffect.flowMul * 0.2)
+              * (0.92 + particle.speedMul * 0.28)
+              * edgeRaceSpeedFactor;
+            const raceT = repeatRange(particle.shapeU + time * raceSpeed, 1);
+            const lane = repeatRange(
+              particle.shapeV + Math.sin(time * (0.08 + particle.seedB * 0.16) + particle.seedA * TAU) * 0.016,
+              1
+            );
+            const edgePoint = sampleEdgeRacePath(raceT, lane);
+            const depth = cameraOffset * (0.86 + particle.seedC * 0.2);
+            const edgeWorld = screenToWorld(edgePoint.x, edgePoint.y, depth, centerX, centerY, perspective, cameraOffset);
+            const speedPulse = 1 + Math.sin(time * 5.4 + particle.seedA * TAU) * 0.07;
+            targetX = edgeWorld.x * speedPulse;
+            targetY = edgeWorld.y;
+            targetZ = edgeWorld.z + Math.sin(time * 2.4 + particle.seedC * TAU) * (cylinderRadius * 0.024);
+          }
+
+          const blend = clamp(
+            deltaSeconds * (2.1 + currentEffect.driftMul * 2.8) * particle.driftMul + (isShapeTransitioning ? 0.2 : 0),
+            0.05,
+            1
+          );
+          particle.x += (targetX - particle.x) * blend;
+          particle.y += (targetY - particle.y) * blend;
+          particle.z += (targetZ - particle.z) * blend;
+
+          if (!currentEffect.particleChars.includes(particle.char) && Math.random() < deltaSeconds * 2.2) {
+            particle.char = pickParticleChar(currentEffect.particleChars);
+          }
+
+          if (particle.life <= 0) {
+            resetParticle(particle, true);
+          }
+        }
+      };
+
+      const drawWindParticles = () => {
+        if (!particles.length) return;
+
+        const isLight = document.body.classList.contains('light');
+        const centerX = width * 0.5;
+        const centerY = height * BASE_CENTER_Y;
+        const perspective = Math.min(width, height) * 1.16;
+        const cameraOffset = cylinderRadius * 6.9;
+        let shapeFocus = 1.54;
+        let particleFontScale = currentEffect.mode === 'comet' ? 1.08 : 1.04;
+        if (activeEffectId === 'sobre-mi') {
+          shapeFocus = 1.28;
+          particleFontScale = currentEffect.mode === 'comet' ? 1 : 0.94;
+        } else if (activeEffectId === 'habilidades') {
+          shapeFocus = 1.64;
+          particleFontScale = currentEffect.mode === 'comet' ? 1.08 : 1.04;
+        } else if (activeEffectId === 'proyectos') {
+          shapeFocus = 1.78;
+          particleFontScale = currentEffect.mode === 'comet' ? 1.12 : 1.08;
+        } else if (activeEffectId === 'formacion') {
+          shapeFocus = 1.52;
+          particleFontScale = currentEffect.mode === 'comet' ? 1.04 : 1;
+        } else if (activeEffectId === 'contacto') {
+          shapeFocus = 2.08;
+          particleFontScale = currentEffect.mode === 'comet' ? 1.14 : 1.12;
+        }
+
+        ctx.font = `${Math.max(5, cellSize * particleFontScale)}px "JetBrains Mono", monospace`;
+
+        for (let i = 0; i < particles.length; i += 1) {
+          const particle = particles[i];
+          const depth = particle.z + cameraOffset;
+          if (depth <= 1) continue;
+
+          const invDepth = 1 / depth;
+          const screenX = particle.x * perspective * invDepth + centerX;
+          const screenY = particle.y * perspective * invDepth + centerY;
+          const col = Math.floor(screenX / cellSize);
+          const row = Math.floor(screenY / cellSize);
+
+          if (col < 0 || col >= cols || row < 0 || row >= rows) continue;
+
+          const idx = row * cols + col;
+          const progress = 1 - clamp(particle.life / particle.maxLife, 0, 1);
+          const lifeFade = 0.25 + Math.sin(Math.PI * progress) * 0.75;
+          const nearFade = clamp(invDepth * cameraOffset * 0.9, 0.26, 1);
+          const occlusion = activeEffectId === 'sobre-mi'
+            ? (depthBuffer[idx] > 0 && invDepth < depthBuffer[idx]
+              ? (currentEffect.mode === 'comet' ? 0.5 : 0.35)
+              : 1)
+            : 1;
+          const alphaBase = isLight
+            ? (0.07 + lifeFade * 0.2) * currentEffect.alphaMul
+            : (0.12 + lifeFade * 0.3) * currentEffect.alphaMul;
+          const alpha = alphaBase * nearFade * occlusion * shapeFocus;
+
+          if (alpha < 0.02) continue;
+
+          const color = isLight
+            ? `rgba(${PARTICLE_COLOR_LIGHT},${alpha})`
+            : `rgba(${PARTICLE_COLOR_DARK},${alpha})`;
+          ctx.fillStyle = color;
+          ctx.fillText(particle.char, screenX, screenY);
+        }
+      };
+
+      const drawGrid = () => {
+        const isLight = document.body.classList.contains('light');
+        const section = activeEffectId;
+        const bgDark = section === 'proyectos'
+          ? '9,13,20'
+          : section === 'contacto'
+            ? '8,14,18'
+            : section === 'habilidades'
+              ? '10,16,22'
+              : section === 'formacion'
+                ? '12,14,18'
+                : '13,17,23';
+        const bgLight = section === 'proyectos'
+          ? '250,252,255'
+          : section === 'contacto'
+            ? '248,253,250'
+            : section === 'habilidades'
+              ? '249,252,255'
+              : section === 'formacion'
+                ? '249,250,252'
+                : '250,253,251';
+        let sectionTrailCut = 0.03;
+        if (activeEffectId === 'habilidades') {
+          sectionTrailCut = 0.04;
+        } else if (activeEffectId === 'proyectos') {
+          sectionTrailCut = 0.05;
+        } else if (activeEffectId === 'contacto') {
+          sectionTrailCut = 0.08;
+        }
+        if (currentEffect.trailStrength > 0.02) {
+          const fadeAlpha = isLight
+            ? clamp(
+              0.45 - currentEffect.trailStrength * 0.27 - sectionTrailCut,
+              0.06,
+              0.58
+            )
+            : clamp(
+              0.33 - currentEffect.trailStrength * 0.2 - sectionTrailCut,
+              0.05,
+              0.5
+            );
+          const fadeColor = isLight
+            ? `rgba(${bgLight},${fadeAlpha})`
+            : `rgba(${bgDark},${fadeAlpha})`;
+          ctx.fillStyle = fadeColor;
+          ctx.fillRect(0, 0, width, height);
+        } else {
+          ctx.clearRect(0, 0, width, height);
+        }
+
+        ctx.font = `${cellSize * 0.95}px "JetBrains Mono", monospace`;
+        let sectionAlphaBoost = 1.1;
+        if (activeEffectId === 'sobre-mi') {
+          sectionAlphaBoost = 1.08;
+        } else if (activeEffectId === 'habilidades') {
+          sectionAlphaBoost = 1.16;
+        } else if (activeEffectId === 'proyectos') {
+          sectionAlphaBoost = 1.22;
+        } else if (activeEffectId === 'formacion') {
+          sectionAlphaBoost = 1.12;
+        } else if (activeEffectId === 'contacto') {
+          sectionAlphaBoost = 1.24;
+        }
+
+        for (let row = 0; row < rows; row += 1) {
+          for (let col = 0; col < cols; col += 1) {
+            const idx = row * cols + col;
+            const char = charBuffer[idx];
+            if (char === ' ') continue;
+
+            const shade = shadeBuffer[idx];
+            const gamma = clamp(0.94 - currentEffect.volumeMul * 0.2, 0.56, 0.94);
+            const volumeTone = Math.pow(shade, gamma);
+            const alpha = (isLight ? 0.18 + volumeTone * 0.36 : 0.24 + volumeTone * 0.54)
+              * currentEffect.alphaMul
+              * sectionAlphaBoost;
+            const color = isLight
+              ? `rgba(${ASCII_COLOR_LIGHT},${clamp(alpha, 0.03, 1)})`
+              : `rgba(${ASCII_COLOR_DARK},${clamp(alpha, 0.03, 1)})`;
+            ctx.fillStyle = color;
+            ctx.fillText(char, col * cellSize, row * cellSize);
+          }
+        }
+      };
+
+      const drawStaticFrame = () => {
+        clearBuffers();
+        projectCylindricalStreamToGrid(0);
+        drawGrid();
+        drawWindParticles();
+      };
+
+      const render = (timestamp) => {
+        if (!isRunning) return;
+        const deltaSeconds = lastTimestamp ? Math.min((timestamp - lastTimestamp) * 0.001, 0.1) : 0.016;
+        lastTimestamp = timestamp;
+        blendSectionEffect(deltaSeconds);
+        syncParticlePool();
+        updateWindGust(deltaSeconds);
+        updateShapeTransition(deltaSeconds);
+        const time = timestamp * 0.001;
+        updateWindParticles(deltaSeconds, time);
+
+        clearBuffers();
+        projectCylindricalStreamToGrid(time);
+        drawGrid();
+        drawWindParticles();
+
+        frameId = window.requestAnimationFrame(render);
+      };
+
+      const start = () => {
+        if (isRunning) return;
+        isRunning = true;
+        lastTimestamp = 0;
+        frameId = window.requestAnimationFrame(render);
+      };
+
+      const stop = () => {
+        isRunning = false;
+        if (frameId) {
+          window.cancelAnimationFrame(frameId);
+          frameId = 0;
+        }
+      };
+
+      resizeScene();
+      setupSectionEffectObserver();
+
+      if (reduceMotion) {
+        currentEffect = { ...targetEffect };
+        const staticShape = SECTION_SHAPES[activeEffectId] || SECTION_SHAPES['sobre-mi'];
+        setShapeImmediately(staticShape);
+        rebuildParticles();
+        drawStaticFrame();
+        window.addEventListener('resize', () => {
+          resizeScene();
+          currentEffect = { ...targetEffect };
+          drawStaticFrame();
+        });
+        let staticTicking = false;
+        window.addEventListener('scroll', () => {
+          if (staticTicking) return;
+          staticTicking = true;
+          window.requestAnimationFrame(() => {
+            staticTicking = false;
+            const nextSection = pickSectionFromViewport();
+            if (nextSection !== activeEffectId) {
+              setSectionEffect(nextSection);
+              currentEffect = { ...targetEffect };
+              rebuildParticles();
+            }
+            drawStaticFrame();
+          });
+        }, { passive: true });
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            window.requestAnimationFrame(drawStaticFrame);
+          });
+        }
+        return;
+      }
+
+      start();
+
+      let effectScrollTicking = false;
+      window.addEventListener('scroll', () => {
+        if (effectScrollTicking) return;
+        effectScrollTicking = true;
+        window.requestAnimationFrame(() => {
+          effectScrollTicking = false;
+          const nextSection = pickSectionFromViewport();
+          if (nextSection !== activeEffectId) {
+            setSectionEffect(nextSection);
+          }
+        });
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        resizeScene();
+        const nextSection = pickSectionFromViewport();
+        if (nextSection !== activeEffectId) {
+          setSectionEffect(nextSection);
+        }
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stop();
+        } else {
+          start();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
